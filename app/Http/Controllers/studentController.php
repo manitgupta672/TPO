@@ -104,6 +104,38 @@ class studentController extends Controller
             return redirect('/student/panel');
         }
 
+    public function printResume(){
+
+        $data = Auth::user()->resume;
+        // echo $data['kt'];
+        // print_r($data);
+        if(!empty($data['kt'])){
+            $a = explode('-',$data['kt']);
+            // print_r($a);
+
+            $data['sem1_kt'] = $a[0];
+            $data['sem2_kt'] = $a[1];
+            $data['sem3_kt'] = $a[2];
+            $data['sem4_kt'] = $a[3];
+            $data['sem5_kt'] = $a[4];
+            $data['sem6_kt'] = $a[5];
+            $data['sem7_kt'] = $a[6];
+            $data['sem8_kt'] = $a[7];
+        }
+
+
+
+
+        // $myResume = Auth::user()->resume;
+        $user = Auth::user()->toArray();
+        // var_dump();
+        $data['name'] = $user['name'];
+        $data['mobile'] = $user['mobile'];
+        $data['newRoll'] = $user['newRoll'];
+        $data['email'] = $user['email'];
+        return view('student.printResume')->with('resume',$data);
+    }    
+
     public function fellowStudents(){
         $fellowStudents = DB::table('users')
             ->where('users.entity','student')

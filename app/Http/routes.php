@@ -43,7 +43,7 @@ Route::post('/student/panel/placements/cancelApplicationForCompany','placementsC
 Route::get('/student/panel/p','placementsController@appliedIn');
 Route::get('/student/panel/fellowStudents','studentController@fellowStudents');
 Route::get('/student/panel/fellowStudents/{stuid}','studentController@fellowStudentProfile');
-
+Route::get('/student/panel/printResume','studentController@printResume');
 // Route::get('register/verify/{confirmationCode}', [
 //     'as' => 'confirmation_path',
 //     'uses' => 'designing@confirm'
