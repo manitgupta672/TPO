@@ -1,0 +1,11 @@
+<?php $__env->startSection('content'); ?>
+
+<?php foreach($fellowStudents as $fellowStudent): ?>
+<!-- <?php echo e($fellowStudent->user_id); ?> -->
+<!-- <?php echo e($fellowStudent->id); ?> -->
+	<a href="<?php echo e(action('studentController@fellowStudentProfile',[$fellowStudent->user_id])); ?>"><?php echo e($fellowStudent->name); ?></a>
+	<br/>
+<?php endforeach; ?>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,104 @@
+<?php $__env->startSection('content'); ?>
+
+<?php
+	function ifApplied($id,$appliedInCompanyUserIds){
+		if(in_array($id,$appliedInCompanyUserIds))
+			echo "Applied";
+		else
+			echo "Apply";
+	}
+?>
+<!-- <form method="post" action="/student/panel/placements/applyForCompany"> -->
+<?php echo Form::open(array('url'=>'/student/panel/placements/applyForCompany','method'=>'POST', 'id'=>'myform')); ?>
+
+	<h1>Upcoming Companies</h1>
+
+	<?php foreach($upcomings as $upcoming): ?>
+	
+		<p>Company Name : <?php echo e($upcoming->name); ?></p>
+		<p>Company URL : <?php echo e($upcoming->compUrl); ?></p>
+		<p>Company Email : <?php echo e($upcoming->email); ?></p>
+		<p>Selection Procedure : <?php echo e($upcoming->selPro); ?></p>
+	
+		<button type="submit" value="<?php echo $upcoming->user_id ; ?>" id="<?php echo $upcoming->user_id ; ?>" class="apply">Apply</button>
+		<hr/>
+	<?php endforeach; ?>
+<?php echo Form::close(); ?>
+
+
+<hr/><hr/>
+<?php echo Form::open(array('url'=>'/student/panel/placements/cancelApplicationForCompany','method'=>'POST', 'id'=>'myform2')); ?>
+
+	<h1>Applied Companies</h1>
+
+	<?php foreach($applieds as $applied): ?>
+	
+		<p>Company Name : <?php echo e($applied->name); ?></p>
+		<p>Company URL : <?php echo e($applied->compUrl); ?></p>
+		<p>Company Email : <?php echo e($applied->email); ?></p>
+		<p>Selection Procedure : <?php echo e($applied->selPro); ?></p>
+	
+		<button type="submit" value="<?php echo $applied->user_id ; ?>" id="<?php echo $applied->user_id ; ?>" class="delete">Delete</button>
+		<hr/>
+	<?php endforeach; ?>
+<?php echo Form::close(); ?>
+
+
+<script type="text/javascript">
+		$(document).ready(function(){
+			
+
+			$(".apply").click(function(){
+				var clicked = this.id;
+				// alert($(this).attr("value"));
+				// if($(this).attr("value").slice(-1)=='A'){
+					$.ajax({
+						url:'/student/panel/placements/applyForCompany',
+						type:'post',
+						data:{
+							'applie': $(this).val(),
+							'_token': $('input[name=_token]').val()
+						},
+						success: function(data){
+							// alert("done");
+							$("#" + clicked).prop('disabled', true);
+		        			// $("#" + clicked).val("clicked");
+		        			$("#" + clicked).html('Applied');
+		        			// alert(data);
+		      			}
+					});
+				// }
+			return false;
+			});
+
+
+			$(".delete").click(function(){
+				var clicked = this.id;
+				var urrl = '/student/panel/placements/cancelApplicationForCompany'; 
+				// alert($(this).attr("value"));
+				// if($(this).attr("value").slice(-1)=='A'){
+					$.ajax({
+						url:urrl,
+						type:'post',
+						data:{
+							'applie': $(this).val(),
+							'_token': $('input[name=_token]').val()
+						},
+						success: function(data){
+							$("#" + clicked).prop('disabled', true);
+		        			// $("#" + clicked).val("clicked");
+		        			$("#" + clicked).html('Deleted');
+		        			// alert(data);
+		      			}
+					});
+				// }
+			return false;
+			});
+
+
+		});
+
+</script>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

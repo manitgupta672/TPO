@@ -1,0 +1,11 @@
+<?php $__env->startSection('content'); ?>
+
+	<h3>This is Company admin panel</h3>
+	<a href="/company/panel/jaf" class="button">Fill / Edit JAF</a>
+	<a href="/auth/logout" class="button">Logout</a>
+	<!-- <a href="/company/panel/edit" class="button">Edit Profile & Login</a> -->
+	<a href="/company/panel/myStudents" class="button">Students for Your Company</a>
+
+	<p>Company can see data of students who are elligible for them. Eligibility based on their cutOff percent in the JAF filled. Students of branches selected by the company will only be shown.</p>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

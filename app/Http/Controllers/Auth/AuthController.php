@@ -28,6 +28,8 @@ class AuthController extends Controller
      *
      * @return void
      */
+
+    // protected $redirectTo = '/'.$data['entity'];.'/panel';
     public function __construct()
     {
         $this->middleware('guest', ['except' => 'getLogout']);
@@ -41,11 +43,24 @@ class AuthController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|confirmed|min:6',
-        ]);
+        if($data['entity']=='student'){
+            // $this->redirectTo = '/hello';
+            return Validator::make($data, [
+                'name' => 'required|max:255',
+                'email' => 'required|email|max:255|unique:users',
+                'mobile' => 'required|min:10',
+                'password' => 'required|confirmed|min:6',
+                'newRoll' => 'required|min:10|max:10' 
+            ]);
+        } else {
+            // $this->redirectTo = '/company/panel';
+            return Validator::make($data, [
+                'name' => 'required|max:255',
+                'mobile' => 'required|min:10',
+                'email' => 'required|email|max:255|unique:users',
+                'password' => 'required|confirmed|min:6',
+            ]);
+        }
     }
 
     /**
@@ -56,10 +71,23 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
+        if($data['entity']=='student'){
+            return User::create([
+                'entity' => $data['entity'],
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'mobile' => $data['mobile'],
+                'newRoll' => $data['newRoll'],
+                'password' => bcrypt($data['password'])
+            ]);
+        } else {
+            return User::create([
+                'entity' => $data['entity'],
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'mobile' => $data['mobile'],
+                'password' => bcrypt($data['password'])
+            ]);
+        }
     }
 }

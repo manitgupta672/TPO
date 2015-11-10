@@ -1,0 +1,10 @@
+<?php $__env->startSection('content'); ?>
+
+	<h3>This is Student admin panel</h3>
+	<a href="/student/panel/resume" class="button">Edit / Fill Resume</a>
+	<a href="/student/panel/placements" class="button">Your Companies</a>
+	<a href="/student/panel/fellowStudents" class="button">Your Fellow Mates</a>
+	<a href="/auth/logout" class="button">Logout</a>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

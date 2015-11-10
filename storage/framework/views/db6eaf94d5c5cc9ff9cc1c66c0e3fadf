@@ -1,0 +1,21 @@
+<?php $__env->startSection('content'); ?>
+
+	<?php foreach($myStudents as $myStudent): ?>
+		<?php echo e($myStudent->name); ?>
+
+		<?php echo e($myStudent->branch); ?>
+
+	<?php echo '<br/>'; ?>
+
+	<?php endforeach; ?>
+
+	<hr/>
+	<p>Branch check</p>
+	<p>Current Sem check</p>
+	<p>Percentage Check
+	<p>Either of the aggregate or average % should be greater than cut off by the company.</p>
+	</p>
+	<p>KT check</p>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

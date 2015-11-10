@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
     <head>
         <title>Laravel</title>
@@ -6,40 +6,365 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
 
         <style>
-            html, body {
-                height: 100%;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
-
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
+           
         </style>
     </head>
     <body>
         <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
-            </div>
+        <a href="auth/login" >Login</a>
+        <a href="auth/register">Register</a>
+               
         </div>
     </body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>M.B.M Jodhpur : Vedant</title>
+    <link rel="shortcut icon" href="/img/mbm.ico" type="image/x-icon" />
+    <!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="/css/social.css">
+
+    <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="/css/menu.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/slider.css">
+    <link rel="stylesheet" type="text/css" href="/css/gototop.css">
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="/js/headtacular.min.js"></script>
+    <script src="/js/nt.js"></script>
+    <script src="/js/scrollSpeed.js"></script>
+    <script src="/js/popconfirm.js"></script>
+
+    <script type="text/javascript">
+    (function($){
+        $(document).ready(function() {
+            $('#cssmenu').headtacular({ scrollPoint: 10 }); 
+            
+          var nt = $('#nt').newsTicker({
+          row_height: 50,
+          max_rows: 2,
+          duration: 4000,
+          prevButton: $('#nt-prev'),
+          nextButton: $('#nt-next')
+        });
+        jQuery.scrollSpeed(100, 800);       
+        });
+    })(jQuery);
+
+    </script>
+</head>
+<body oncontextmenu="return false">
+    <!-- Menu  -->  
+    <div id='cssmenu'>
+        <ul>
+           <a class="logo" href="http://www.mbm.ac.in"><img src="/logo.png" width="40" height="40"></a>
+           <li style="margin-left:100px;" class='active'><a href='#'>Home</a></li>
+           <li><a href='javascript:void(0);'>About MBM</a></li>
+           <li><a href='javascript:void(0);'>Courses</a></li>
+           <li><a href='javascript:void(0);'>Contact</a></li>
+           <li><a href="auth/login">Sign In</a></li>
+           <li><a href="auth/register">Register</a></li>
+           <!-- <li><a href='javascript:void(0);' class="open-popup" data-id="popup_3" data-animation="scaleUp" >Sign In</a></li> -->
+        </ul>
+    </div>
+     
+    <!--   Sldier  -->
+    <div id="slider">
+        <figure id="figure" data-anim="la-anim-1" style="box-shadow: 0 0 10px rgba(0, 0, 0, 1);     background-attachment: fixed;">
+            <div class="dot"></div>
+            <img src="img/1.jpg" alt="">
+            <img src="img/2.jpg" alt="">
+            <img src="img/2.jpg" alt="">
+        </figure>
+    </div>
+
+    <!-- News -->
+    <div class="news"></div>
+    <div id="nt-container" style="background-color:#3c3a48;">
+        <i class="fa fa-arrow-up" id="nt-prev"></i>
+        <ul id="nt">
+            <li>Format of prescibed joining report... <a href="#">Read more...</a></li>
+       <li>The Website is Designed by Webbed Club<a href="#">Read more...</a></li>
+        <li>Job announcement form is now available for recruiters... <a href="#">Read more...</a> </li>
+        </ul>
+     <i class="fa fa-arrow-down" id="nt-next"></i>
+   </div>
+
+   <br><br> 
+
+   <!-- About MBM -->
+   <div class="row">
+        <div class="offset-by-one columns ten" style="text-align:justify;">
+                <p>Welcome to the Training and Placement Cell's Website of <strong>MBM Engineering College, Jodhpur .</strong>
+        MBM Engineering College is one of the oldest engineering colleges in India. </p>
+
+        <p>Established on 15th August 1951
+        by the government of Rajasthan, the college boasts of its high academic & technical standards.</p>
+
+        Considered as the pioneering Technical Institution of the State, it offers a gamut of courses both at PG and UG 
+        level. The college is committed to providing its students with an education that combines rigorous academic study and 
+        developing a far more ambitious, integrated and influential environment that will best serve the nation.
+        </div>
+   </div>
+
+   <br>
+   <!-- Dashed Line One -->
+   <div class="offset-by-two columns eight" style="border-bottom:1px solid #3c3a48;"></div>
+    <br><br>
+
+    <!-- Student & Company Panel -->
+    <div class="row">
+        <div class="offset-by-one columns ten">
+        
+        <div class="offset-by-two columns ten" style="text-align:justify;">
+                <a class="button min-height offset-by-one columns three" href="/signIn/company"><span class="fa fa-5x fa-briefcase" style="padding-top:5px"><br></span><br>Company Panel<br></a></span>
+                <a class="button min-height offset-by-two columns three" href="/signIn/student"><span class="fa fa-5x fa-mortar-board" style="padding-top:5px"><br></span><br>Student Panel<br></a></span>
+            </div>
+        
+        </div>
+    </div>
+    
+    <br>
+     <!-- Dashed Line Two -->
+    <div class="offset-by-two columns eight" style="border-bottom:1px solid #3c3a48;"></div>
+    <br><br>
+    <!-- Student & Company Panel End-->
+
+    <!-- Dean Message -->
+    <div class="row">
+        <div class="offset-by-one columns ten" >
+                <img alt="Dean" src="/img/dean.jpg" class="facMsg two columns offset-by-one">
+                <strong style="padding-left:20%;">Message From Dean</strong>
+                <p class="eight columns" style="text-align:justify;"><br>The Training and Placement Cell works ceaselessly to provide smooth communication between companies and student.
+                 Our students spend over 3 months in industry as part of their Practical training. In addition to doing internships in reputed companies across India our students also actively participate in research projects at IIT Jodhpur and other institutes of national repute. 
+                 I extend you a heartly invitation to visit our campus for recruitment.
+                </p>
+                <br>
+        </div>
+    </div>
+     <!-- Dean Message Ends -->
+
+     <!-- And a dashed Line  -->
+    <br>
+    <div class="offset-by-three columns six" style="border-bottom:1px dashed #3c3a48;"></div>
+    <br><br>
+
+
+    <!-- Tpo Head Message  -->
+    <div class="row">
+        <div class="offset-by-one columns ten">
+                <strong style="padding-left:41%;">Message From TPO Head</strong>
+                <p class="offset-by-one eight columns" style="text-align:justify;"><br>  The Training and Placement Cell works ceaselessly to provide smooth communication between companies and student.
+                 Our students spend over 3 months in industry as part of their Practical training. In addition to doing internships in reputed companies across India our students also actively participate in research projects at IIT Jodhpur and other institutes of national repute. 
+                 I extend you a heartly invitation to visit our campus for recruitment.
+                </p>
+                <img alt="Dean" src="/img/tpo_head.jpg" class="facMsg two columns">
+                <br>
+        </div>
+    </div>
+    <!-- Tpo Head Message Ends -->
+
+    <br><br>
+     <!-- Hr Line  -->
+    <div class="offset-by-two columns eight" style="border-bottom:1px solid #3c3a48;"></div>
+
+<!-- Reach Us -->
+<br>
+<div class="row" style="text-align:center;"><strong>Reach Us</strong></div>
+<br>
+
+<!-- Google Map -->
+<div class="row" style="border:1px solid #3c3a48;"></div>
+<div id="map" style="height:50%;"></div>
+<div class="row" style="border:2px solid #3c3a48;"></div>
+
+<!-- Goto Top -->
+<script type="text/javascript" src="/js/gototop.js"></script>
+<a href="#0" class="cd-top" style="z-index:200;">Top</a>
+
+<!-- Footer -->
+<div class="foot"> 
+    <div class="row"><br><br>
+        <div class="four columns offset-by-one" style="border:1px dashed white; border-radius:5px; text-align:center;" >
+            <span style="font-size:1.2em;">Designed By :</span>  <a href="#">Webbed Club</a>
+
+        </div>
+        <div class="three columns" style="border:1px dashed white; border-radius:5px; text-align:center;" >
+            <span style="font-size:1.2em;">About Us</span>
+        </div>
+        <div class="three columns" style="border:1px dashed white; border-radius:5px; text-align:center;" >
+            <span style="font-size:1.2em;">Portals</span>
+        </div>
+    </div>
+    
+    <br>
+
+    <div class="row"> 
+        <div class="four columns offset-by-one" style="border:1px dashed white; border-radius:5px;" >
+            <a href="https://www.facebook.com/mbmwebbed" target="_blank"><img src="/img/webbed.png" width="50%" style="padding:6% 0 0 20%;"></a>
+            <div class="footer-social-icons">
+                <ul class="social-icons">
+                    <li><a href="https://www.facebook.com/mbmwebbed" class="social-icon"> <i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://twitter.com/mbmtpo" class="social-icon"> <i class="fa fa-twitter"></i></a></li>
+                    <li><a href="https://www.youtube.com/user/tpocellmbm" class="social-icon"> <i class="fa fa-youtube"></i></a></li>
+                    <li><a href="https://plus.google.com/109185063954090001259" class="social-icon"> <i class="fa fa-google-plus"></i></a></li>
+                    <li style="font-size:18px;"><a href="tel:+91291-2551566" class="social-icon"> <i class="fa fa-phone"></i></a>  0291-2551566</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="three columns" style="border:1px dashed white; border-radius:5px; text-align:center;" >
+            <ul style="margin-bottom:0;">
+                <li><a href="http://mbm.ac.in">Home</a></li>
+                <li><a href="http://mbm.ac.in/contact">TPO Team</a></li>
+                <li><a href="http://mbm.ac.in/faq">FAQs</a></li>
+                <li><a href="http://en.wikipedia.org/wiki/Jodhpur">About Jodhpur</a></li>
+            </ul>
+        </div>
+
+        <div class="three columns" style="border:1px dashed white; border-radius:5px; text-align:center;" >
+            <ul style="margin-bottom:0;">
+                <li><a href="https://en.wikipedia.org/wiki/MBM_Engineering_College">M.B.M Wiki</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="http://jnvu.edu.in">Faculty</a></li>
+                <li><a href="http://jnvuonline.in">JNVU Exam Portal</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <br>
+    <div class="row offset-by-two columns eight" style="border-bottom:1px solid #fff;"></div><br>
+    <p style="text-align:center; font-size:14px;"> <span class="fa fa-copyright"></span> 2015 MBM Site All Rights Reserved </p>
+</div>
+<!-- Google Map Scripts -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXQnHj2Vs4BhZfp2wHkV4Voa9jMKBIMnY&callback=initMap"
+        async defer></script>
+<script>
+ var contentString = "<p><strong>Mungniram Bangur Memorial College is one of the oldest and reputed college in India.</strong></p>"+
+ "<p><span class=\"fa fa-phone\"></span> Call : 0291 - 2551566 &nbsp; <span class=\"fa fa-external-link\"></span> Web : www.mbm.ac.in</p>";
+    var map;
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 26.268531, lng: 73.033002},
+        zoom: 15
+      });
+      var marker = new google.maps.Marker({
+    position: {lat: 26.268531, lng: 73.033002},
+    map: map,
+    title: 'M.B.M Engineering College'
+  });
+      var infowindow = new google.maps.InfoWindow({
+    content: contentString
+  });
+    marker.addListener('click', function() {
+   infowindow.open(map, marker);
+  });
+}
+</script>
+<!-- Content of pop up -->
+<!-- 
+<div id="popup_3" class="popup" style="z-index:200; position:fixed;">
+  <div class="popup-overlay"></div>
+  <div class="popup-content">
+    <a href="javascript:void(0);" class="close-popup" data-id="popup_3" data-animation="scaleUp">&times;</a>
+    <div class="content row">
+        <h2 style="text-align:center;"> Sign In</h2>
+        
+        <form method="POST" action="{{ url('/auth/login') }}" accept-charset="UTF-8">
+        <input type="hidden" name="_token" value="{!! csrf_token() !!}">
+        <div class="eight columns offset-by-two"> 
+            <label for="email">Email :</label>
+            <input class="twelve columns" placeholder="vedant@example.com" name="email" type="email" id="email">    
+        </div>  
+
+        <div class="eight columns offset-by-two">
+            <label for="password">Password :</label>
+            <input class="twelve columns" placeholder="Password" name="password" type="password" value="" id="password">    
+        </div>
+        
+         <div class="eight columns offset-by-two">
+                        <!--  <label for="entity" style="display:inline;">Company</label>
+                         <input type="radio" style="display:inline;" name="enitiy" value="1">
+                         <label for="entity" style="display:inline;">Student</label>
+                         <input type="radio" style="display:inline;" name="enitiy" value="2"> -->
+             <!-- <label for="remember">Remember Me</label>
+             <input type="checkbox" style="display:inline;" name="remember">
+         </div>
+
+        <div class="eight columns offset-by-two">
+            <button  class="twelve columns button-primary" type="submit">Login Securely</button>
+            <a href="/auth/register" class="twelve columns button">Register</a>
+        </div>
+
+    </div>
+  </div>
+</div> --> 
+<!-- Lines background -->
+<canvas id="lines-canvas" style="position: fixed;
+              top: 0;
+              left: 0;
+              z-index: -20;"></canvas>
+<script src="/js/lines.min.js"></script>
+<script>
+    // set canvas width and height based on the window
+    var canvas = $('#lines-canvas');
+    canvas.attr('height',$(window).height());
+    canvas.attr('width',$(window).width());
+
+    new lines().draw();
+</script>
+
+
+
+<script type="text/javascript">
+    // jQuery extend functions for popup
+(function($) {
+  $.fn.openPopup = function( settings ) {
+    var elem = $(this);
+    // Establish our default settings
+    var settings = $.extend({
+      anim: 'fade'
+    }, settings);
+    elem.show();
+    elem.find('.popup-content').addClass(settings.anim+'In');
+  }
+  
+  $.fn.closePopup = function( settings ) {
+    var elem = $(this);
+    // Establish our default settings
+    var settings = $.extend({
+      anim: 'fade'
+    }, settings);
+    elem.find('.popup-content').removeClass(settings.anim+'In').addClass(settings.anim+'Out');
+    
+    setTimeout(function(){
+        elem.hide();
+        elem.find('.popup-content').removeClass(settings.anim+'Out')
+      }, 100);
+  }
+    
+}(jQuery));
+
+$(document).keyup(function(e) {
+  if (e.keyCode == 27) $('.close-popup').click();   // esc
+});
+// Click functions for popup
+$('.open-popup').click(function(){
+  $('#'+$(this).data('id')).openPopup({
+    anim: (!$(this).attr('data-animation') || $(this).data('animation') == null) ? 'fade' : $(this).data('animation')
+  });
+});
+$('.close-popup').click(function(){
+  $('#'+$(this).data('id')).closePopup({
+    anim: (!$(this).attr('data-animation') || $(this).data('animation') == null) ? 'fade' : $(this).data('animation')
+  });
+});
+</script>
+
+</body>
 </html>

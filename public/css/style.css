@@ -1,0 +1,287 @@
+html , body {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      background-color: #fff;
+    }
+ul li{
+  list-style-type: none;
+}
+/*Menu  settings*/
+
+    #cssmenu {
+      position: relative;
+      background-color: #fff;
+      /*background-color: #3c3a48;*/
+      padding: 6px 0px 0px 0px;
+      z-index: 99999;
+      transition: all 300ms;
+      color: white;
+    }
+    #cssmenu.is-stuck ul{
+      position: fixed;
+      background-color: #3c3a48  ;
+      /*background-color: #0f0d2a;*/
+      padding: 4px 0px 0px 0px;
+      top: 0;
+      left: 0;
+      width: 100%;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+    }
+
+    #cssmenu > ul > li.active > a:after, #cssmenu > ul > li:hover > a:after, #cssmenu .is-stuck > ul > li > a:hover:after
+    {
+      background-color: #3c3a48;
+      color: #fff;  
+    }
+    #cssmenu.is-stuck > ul > li.active > a, #cssmenu > ul > li:hover > a, #cssmenu > ul > li > a:hover{
+      color: #3c3a48;
+    }
+    #cssmenu.is-stuck > ul > li.active > a:after, #cssmenu > ul > li:hover > a:after, #cssmenu .is-stuck > ul > li > a:hover:after{
+      background-color: #fff;
+    }
+
+    #cssmenu > ul > li:hover > a:after, #cssmenu > ul > li > a:hover:after{
+      background-color: #3c3a48;
+    }
+    #cssmenu.is-stuck > ul > li:hover > a:after{
+      background-color: white;
+    }
+
+    #cssmenu > ul > li > a:hover{
+      color: white;
+    } 
+    #cssmenu.is-stuck > ul > li > a:hover{
+      color: #3c3a48;
+    }
+
+    #cssmenu.is-stuck > ul > li > a{
+      color: #fff;
+    }
+
+    .logo{
+      padding-left: 20px;
+      position: absolute;
+      left:0px ;
+      top:-18px;
+    }
+    a{
+      text-decoration: none;
+      padding-top: 20px;
+      color: white;
+    }
+
+    /*Image Slider Settings for dotted bg*/
+
+.dot{
+  position:absolute; 
+  width:100%; 
+  height:600px; 
+  background:url(http://s14.directupload.net/images/111129/44ga9qid.png); 
+  z-index:100;
+  background-repeat: repeat;
+
+}
+/*figure { 
+    font-size:25px; 
+    position: relative;
+    display: inline-block;
+}
+
+figure:before {
+    position: absolute;
+    content:"";
+    width:100%;
+    height:100%;
+    background: url(http://s17.postimg.org/gdleb3s23/dot.png);
+/*    background:url(http://s14.directupload.net/images/111129/44ga9qid.png);
+/*    background-repeat:repeat; 
+    background-position: center;*/
+/*
+}*/
+#slider{
+  background-color: #3c3a48;
+}
+
+
+    /*Settings for News Ticker*/
+#nt {
+  max-width: 80%;
+  margin: auto;
+}
+
+#nt-container {
+  text-align: center;
+}
+
+#nt-container i {
+  font-size: 20px;
+  margin: 8px;
+  cursor: pointer;
+  -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+
+#nt-container i:hover {
+  color: #333;
+}
+
+#nt li {
+  color: #fff;
+  background: #3c3a48;
+  overflow: hidden;
+  height: 20px;
+  padding: 10px;
+  font-size: 1.2em;
+  text-align: left;
+  border-bottom: 1px dotted #2c8162;
+  list-style-type: none;
+  text-align: center; 
+}
+
+#nt li:hover {
+  background: #FFF;
+  color:#3c3a48;
+}
+#nt li:hover > a{
+    color:#3c3a48;
+}
+#nt li a:hover{
+      color:teal;
+}
+#nt-container{
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, .8);
+}
+#slider{
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, .8);
+}
+
+
+/*Footer  Styling*/
+.foot {
+  min-height: 55%;
+  display: block;
+  position: relative;
+  background-color: #3c3a48;
+  opacity: 0.9;
+  color: #fff;
+  font-size: 1.2em;
+}
+
+.foot::after {
+  content: "";
+  background: url('../img/footer.jpg');
+  opacity: 0.2  ;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  background-size: cover;
+}
+
+/*  Student Panel / Company panel Button */
+.min-height{
+  min-height: 100px;
+  min-width: 200px;
+  color: #3c3a48;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+
+}
+
+.facMsg{
+    border-radius: 30%;
+    border: 5px solid #3c3a48;
+    height:150px;
+    width: 150px;
+
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+}
+
+/*Scrollbar color change */
+::-webkit-scrollbar {
+width: 10px;
+height: 15px;
+}
+::-webkit-scrollbar-track-piece  {
+background-color: #3c3a48;
+}
+::-webkit-scrollbar-thumb:vertical {
+height: 30px;
+background-color: #fff;
+}
+
+
+
+
+/*  For Signin POPUP */
+  /* popup styles */
+.popup {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+}
+.popup-overlay {
+  background: rgba(0,0,0,0.9);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.popup-content {
+  position: absolute;
+  background: #fff;
+  width: 500px;
+  margin: -58px 0 0 -264px;
+  left: 50%;
+  top: 35%;
+  z-index: 11;
+  padding: 14px;
+}
+.close-popup {
+  display: inline-block;
+  position: absolute;
+  top: -8px;
+  right: -30px;
+  font-size: 42px;
+}
+
+.popup {
+    -webkit-perspective: 1200px;
+    -moz-perspective: 1200px;
+    perspective: 1200px;
+}
+.popup-content {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+
+
+  @media only screen and (max-width 816px)
+  {
+  .foot {
+    height: 100%;
+    
+  }
+  .row{
+    text-align: center;
+  }
+
+  }

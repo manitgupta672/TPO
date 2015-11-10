@@ -1,0 +1,124 @@
+@extends('master')
+@section('content')
+	<h2 style="text-align:center;">Fill Out Job Application Form</h2>
+	{!! Form::open(['method'=>'POST','url'=>'/company/panel/jaf']) !!}
+	{!! Form::model($data,['method'=>'POST','url'=>'/company/panel/jaf']) !!}
+
+		<!-- <input type="hidden" name="_token" value="{{ csrf_token() }}"> -->
+
+		<div class="six columns offset-by-three">
+			{!! Form::label('hrName','H.R. Name :') !!}
+		  	<span class="fa fa-user"></span>
+			{!! Form::text('hrName',null,['class'=>'twelve columns','placeholder'=>'H.R. Name']) !!}
+		</div>
+
+		<div class="six columns offset-by-three">
+			{!! Form::label('compUrl','Company URL / Link to Job Description /Company  Profile :') !!}
+			<span class="fa fa-chrome"></span>
+			{!! Form::text('compUrl',null, ['class'=>'twelve columns','placeholder'=>'www.mbm.ac.in/company-profile/job-profile']) !!}
+		</div>
+
+		<div class="six columns offset-by-three">
+			{!! Form::label('compAdd','Company Full Address :') !!}
+			<span class="fa fa-map"></span>
+			{!! Form::textarea('compAdd',null, ['class'=>'twelve columns','placeholder'=>'M.B.M Engg. College, Ratanada, Jodhpur. 342001']) !!}
+		</div>
+
+		<div class="six columns offset-by-three">
+			{!! Form::label('compCity','Company Recruitment Office City :') !!}
+			<span class="fa fa-map-marker"></span>
+			{!! Form::text('compCity',null, ['class'=>'twelve columns','placeholder'=>'Jodhpur']) !!}
+		</div>
+
+		<div class="six columns offset-by-three">
+			{!! Form::label('hrMob','H.R. Mobile (Don\'t Prefix 0/+91):') !!}
+			<span class="fa fa-mobile-phone"></span>
+			{!! Form::text('hrMob',null, ['class'=>'twelve columns','placeholder'=>'8559930375','maxlength'=>'10','minlength'=>'10']) !!}
+		</div>
+
+		<div class="six columns offset-by-three">
+			{!! Form::label('hrPhone','H.R. Mobile/Phone Alternative :') !!}
+			<span class="fa fa-phone"></span>
+			{!! Form::text('hrPhone',null, ['class'=>'twelve columns','placeholder'=>'0291-2551566','maxlength'=>'12']) !!}
+		</div>
+		
+		<div  class="six columns offset-by-three" style="height:70px;">
+			<hr><hr>
+		</div>
+
+		<div class="six columns offset-by-three">
+			{!! Form::label('compOver','Company Overview :') !!}
+			<span class="fa fa-apple"></span>
+			{!! Form::textarea('compOver',null, ['class'=>'twelve columns','placeholder'=>'Company Overview']) !!}
+		</div>
+
+		<div class="six columns offset-by-three">
+			{!! Form::label('jobDesc','Job Description :') !!}
+			<span class="fa fa-sort-numeric-asc"></span>
+			{!! Form::textarea('jobDesc',null, ['class'=>'twelve columns','placeholder'=>'Job Desciption']) !!}
+		</div>
+
+		<div class="six columns offset-by-three">
+			{!! Form::label('cityPost','Place of Joining :') !!}
+			<span class="fa fa-map-marker"></span>
+			{!! Form::text('cityPost',null, ['class'=>'twelve columns','placeholder'=>'Jodhpur']) !!}
+		</div>
+
+		<div class="six columns offset-by-three">
+			{!! Form::label('accom','Whether Accomodation is Provided :') !!}
+			<span class="fa fa-bed"></span>
+			{!! Form::text('accom',null, ['class'=>'twelve columns','placeholder'=>'Yes/No']) !!}
+		</div>
+
+		<div class="six columns offset-by-three">
+			{!! Form::label('bond','Whether a Bond is signed :') !!}
+			<span class="fa fa-legal"></span>
+			{!! Form::text('bond',null, ['class'=>'twelve columns','placeholder'=>'Yes/No']) !!}
+		</div>
+
+		<div class="six columns offset-by-three">
+			{!! Form::label('cutOff','Cut off Percentage:') !!}
+			<span class="fa fa-circle-o"></span>
+			{!! Form::text('cutOff',null, ['class'=>'twelve columns','placeholder'=>'60%']) !!}
+		</div>
+
+		<div class="six columns offset-by-three">
+			{!! Form::label('ktAllowed',"KT's Allowed:") !!}
+			<span class="fa fa-circle-o"></span>
+			{!! Form::text('ktAllowed',null, ['class'=>'twelve columns','placeholder'=>'60%']) !!}
+		</div>
+
+		<div class="six columns offset-by-three">
+			{!! Form::label('selPro','Selection Procedure :') !!}
+			<span class="fa fa-road"></span>
+			{!! Form::textarea('selPro',null, ['class'=>'twelve columns','placeholder'=>'Round One: Aptitude Test, Round Two: GD , Round Three: Interview']) !!}
+		</div>
+
+		<div>			
+			<br/>CSE<input type="checkbox" name="CSEBE" value="CSEBE" <?php if(strpos($data['openFor'], 'CSEBE') !== false) echo "checked"; ?> />
+			<br/>ITE<input type="checkbox" name="ITEBE" value="ITEBE" <?php if(strpos($data['openFor'], 'ITEBE') !== false) echo "checked"; ?> />
+			<br/>ECE<input type="checkbox" name="ECEBE" value="ECEBE" <?php if(strpos($data['openFor'], 'ECEBE') !== false) echo "checked"; ?> />
+			<br/>ECC<input type="checkbox" name="ECCBE" value="ECCBE" <?php if(strpos($data['openFor'], 'ECCBE') !== false) echo "checked"; ?> />
+			<br/>EEE<input type="checkbox" name="EEEBE" value="EEEBE" <?php if(strpos($data['openFor'], 'EEEBE') !== false) echo "checked"; ?> />
+			<br/>EEL<input type="checkbox" name="EELBE" value="EELBE" <?php if(strpos($data['openFor'], 'EELBE') !== false) echo "checked"; ?> />
+			<br/>BCT<input type="checkbox" name="BCTBE" value="BCTBE" <?php if(strpos($data['openFor'], 'BCTBE') !== false) echo "checked"; ?> />
+			<br/>CIV<input type="checkbox" name="CIVBE" value="CIVBE" <?php if(strpos($data['openFor'], 'CIVBE') !== false) echo "checked"; ?> />
+			<br/>MEC<input type="checkbox" name="MECBE" value="MECBE" <?php if(strpos($data['openFor'], 'MECBE') !== false) echo "checked"; ?> />
+			<br/>CHE<input type="checkbox" name="CHEBE" value="CHEBE" <?php if(strpos($data['openFor'], 'CHEBE') !== false) echo "checked"; ?> />
+			<br/>MIN<input type="checkbox" name="MINBE" value="MINBE" <?php if(strpos($data['openFor'], 'MINBE') !== false) echo "checked"; ?> />
+			<br/>MCA<input type="checkbox" name="MCA" value="MCA" <?php if(strpos($data['openFor'], 'MCA') !== false) echo "checked"; ?> />
+		</div>
+
+		<div class="six columns offset-by-three">
+			{!! Form::submit('Complete Update',['class'=>'twelve columns btn button-primary']) !!}
+		</div>
+			<a href="/company/panel" class="button six columns offset-by-three">Cancel</a>
+
+
+
+
+
+
+
+	{!! Form::close() !!}
+@stop
