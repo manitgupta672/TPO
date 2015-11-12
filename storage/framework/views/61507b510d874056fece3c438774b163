@@ -22,7 +22,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>M.B.M Jodhpur : Vedant</title>
+    <title>M.B.M Jodhpur</title>
     <link rel="shortcut icon" href="/img/mbm.ico" type="image/x-icon" />
     <!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
     <link rel="stylesheet" type="text/css" href="/css/social.css">

@@ -52,10 +52,16 @@ class placementsController extends Controller
             ->whereIn('users.id',$a)
             ->get();
 
+        $allCompanies = DB::table('jaf')
+                        ->join('users','jaf.user_id','=','users.id')
+                        ->select('users.*','jaf.*')
+                        ->where('studentPanelVisibilityStatus','1')
+                        ->get();
                     
         return view('student.placements')->with([
             'upcomings'=>$upcoming,
-            'applieds'=>$applied
+            'applieds'=>$applied,
+            'allCompanies'=>$allCompanies
             ]);
     }
 
