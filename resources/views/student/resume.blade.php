@@ -233,14 +233,41 @@
 			<span class="fa fa-check-circle-o"></span>
 			{!! Form::text('board10Percent',null, ['class'=>'twelve columns','placeholder'=>'95% or CGPA']) !!}
 		</div>
+		<div>
+			Diploma Candidate?<input id="ifDiploma" type="checkbox" name="ifDiploma" value="1">
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				// $('input[type=checkbox]').click(function(){
+				// 	// $('select[name=board12]').remove();
+				// 	$('.fordiplomastudents').show();
+				// });
+
+				$('#ifDiploma').change(function() {
+				   if($(this).is(":checked")) {
+						$('#lbl').html("Diploma College");
+						$('.forbestudents').hide();
+						$('input[name=diplomaCollege]').show();
+				      return;
+				   }
+				   		//for BE Students
+						$('.forbestudents').show();
+						$('input[name=diplomaCollege]').hide();
+
+				   //'unchecked' event code
+				});
+			});
+		</script>
 		<div class="six columns offset-by-three">
-			{!! Form::label('board12','12th Board:') !!}
-			<span class="fa fa-university"></span>
-			<select name="board12">
+			{!! Form::label('board12','12th Board:',['id'=>'lbl']) !!}
+			<span class="fa fa-university forbestudents"></span>
+			<select name="board12" class="forbestudents">
 				<option value="CBSE" <?php if($data['board12']=='CBSE') echo " selected";?>>CBSE</option>
 				<option value="RBSE" <?php if($data['board12']=='RBSE') echo " selected";?>>RBSE</option>
 				<option value="Other" <?php if($data['board12']=='Other') echo " selected";?>>Other</option>
 			</select>
+			{!! Form::text('diplomaCollege',null, ['class'=>'twelve columns fordiplomastudents','style'=>'display:none','placeholder'=>'Your College Of Diploma']) !!}
+
 			<!-- {!! Form::select('board12', array('CBSE' => 'CBSE', 'RBSE' => 'RBSE' , 'other' => 'Other'), 'CBSE'); !!} -->
 
 			<!-- {!! Form::text('board12',null, ['class'=>'twelve columns','placeholder'=>'CBSE/RBSE/Other']) !!} -->
@@ -253,8 +280,11 @@
 
 
 
-
-
+		<div class="six columns offset-by-three">
+			{!! Form::label('diplomaCollege','Diploma College') !!}
+			<span class="fa fa-check-circle-o"></span>
+			{!! Form::text('diplomaCollege',null, ['class'=>'twelve columns','placeholder'=>'Diploma College']) !!}
+		</div>
 
 
 

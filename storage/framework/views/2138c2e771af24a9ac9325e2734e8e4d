@@ -273,15 +273,22 @@
 			<?php echo Form::text('board10Percent',null, ['class'=>'twelve columns','placeholder'=>'95% or CGPA']); ?>
 
 		</div>
-		<div class="six columns offset-by-three">
-			<?php echo Form::label('board12','12th Board:'); ?>
+		<div>
+			Diploma Candidate?<input id="ifDiploma" type="checkbox" name="ifDiploma" value="1">
+		</div>
 
-			<span class="fa fa-university"></span>
-			<select name="board12">
+		<div class="six columns offset-by-three">
+			<?php echo Form::label('board12','12th Board:',['id'=>'lbl']); ?>
+
+			<span class="fa fa-university forbestudents"></span>
+			<select name="board12" class="forbestudents">
 				<option value="CBSE" <?php if($data['board12']=='CBSE') echo " selected";?>>CBSE</option>
 				<option value="RBSE" <?php if($data['board12']=='RBSE') echo " selected";?>>RBSE</option>
 				<option value="Other" <?php if($data['board12']=='Other') echo " selected";?>>Other</option>
 			</select>
+			<?php echo Form::text('diplomaCollege',null, ['class'=>'twelve columns fordiplomastudents','style'=>'display:none','placeholder'=>'Your College Of Diploma']); ?>
+
+
 			<!-- <?php echo Form::select('board12', array('CBSE' => 'CBSE', 'RBSE' => 'RBSE' , 'other' => 'Other'), 'CBSE');; ?> -->
 
 			<!-- <?php echo Form::text('board12',null, ['class'=>'twelve columns','placeholder'=>'CBSE/RBSE/Other']); ?> -->
