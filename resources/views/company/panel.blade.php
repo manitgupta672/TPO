@@ -1,4 +1,4 @@
-@extends('master')
+@extends('app')
 @section('content')
 
 	<h3>This is Company admin panel</h3>

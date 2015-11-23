@@ -22,6 +22,24 @@ Route::get('/hello',function(){
 // });
 // Route::get('student/panel','newController@index');
 
+// Route::get('A/panel','adminController@index');
+// Route::post('admin/login','adminController@welcome');
+// Route::get('admin/companyManagement', ['middleware' => ['adminLevelOne', 'admin'],'adminController@allCompanies']);
+// Route::get('admin/companyManagement',function(){
+// 	return view('admin.hi');
+// });
+
+Route::get('admin',function(){
+	return view('auth.loginAdmin');
+});
+Route::get('registerAdmin',function(){
+	return view('auth.registerAdmin');
+});
+Route::get('admin/panel','adminController@index');
+Route::get('admin/companyManagement','adminController@allCompanies');
+Route::get('admin/companyManagement/{company_id}','adminController@company');
+Route::post('admin/companyManagement/updateVisibility','adminController@updateSetVisibilityStatus');
+
 Route::controller('auth','Auth\AuthController');
 Route::get('company/panel','companyController@postLoginPage');
 Route::get('company/panel/jaf','companyController@jaf');

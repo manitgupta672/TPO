@@ -1,4 +1,4 @@
-@extends('master')
+@extends('app')
 @section('content')
 	<h2 style="text-align:center;">Fill Out Job Application Form</h2>
 	{!! Form::open(['method'=>'POST','url'=>'/company/panel/jaf']) !!}

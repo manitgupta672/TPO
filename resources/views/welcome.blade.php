@@ -67,8 +67,12 @@
            <li><a href='javascript:void(0);'>About MBM</a></li>
            <li><a href='javascript:void(0);'>Courses</a></li>
            <li><a href='javascript:void(0);'>Contact</a></li>
+           @if(auth()->guest())
            <li><a href="auth/login">Sign In</a></li>
            <li><a href="auth/register">Register</a></li>
+           @else
+           <li><a href="{{ url('/' . auth()->user()->entity . '/panel') }}">My Account</a></li>
+           @endif
            <!-- <li><a href='javascript:void(0);' class="open-popup" data-id="popup_3" data-animation="scaleUp" >Sign In</a></li> -->
         </ul>
     </div>

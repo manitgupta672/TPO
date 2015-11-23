@@ -1,4 +1,4 @@
-@extends('master')
+@extends('app')
 @section('content')
 	<h2 style="text-align:center;">Fill Out Resume</h2>
 	{!! Form::open(['method'=>'POST','url'=>'/student/panel/resume']) !!}
@@ -234,28 +234,28 @@
 			{!! Form::text('board10Percent',null, ['class'=>'twelve columns','placeholder'=>'95% or CGPA']) !!}
 		</div>
 		<div>
-			Diploma Candidate?<input id="ifDiploma" type="checkbox" name="ifDiploma" value="1">
+			<!-- Diploma Candidate?<input id="ifDiploma" type="checkbox" name="ifDiploma" value="1"> -->
 		</div>
 		<script type="text/javascript">
-			$(document).ready(function(){
-				// $('input[type=checkbox]').click(function(){
-				// 	// $('select[name=board12]').remove();
-				// 	$('.fordiplomastudents').show();
-				// });
+			// $(document).ready(function(){
+			// 	// $('input[type=checkbox]').click(function(){
+			// 	// 	// $('select[name=board12]').remove();
+			// 	// 	$('.fordiplomastudents').show();
+			// 	// });
 
-				$('#ifDiploma').change(function() {
-				   if($(this).is(":checked")) {
-						$('#lbl').html("Diploma College");
-						$('.forbestudents').hide();
-						$('input[name=diplomaCollege]').show();
-				      return;
-				   }
-				   		//for BE Students
-						$('.forbestudents').show();
-						$('input[name=diplomaCollege]').hide();
+			// 	$('#ifDiploma').change(function() {
+			// 	   if($(this).is(":checked")) {
+			// 			$('#lbl').html("Diploma College");
+			// 			$('.forbestudents').hide();
+			// 			$('input[name=diplomaCollege]').show();
+			// 	      return;
+			// 	   }
+			// 	   		//for BE Students
+			// 			$('.forbestudents').show();
+			// 			$('input[name=diplomaCollege]').hide();
 
-				   //'unchecked' event code
-				});
+			// 	   //'unchecked' event code
+			// 	});
 			});
 		</script>
 		<div class="six columns offset-by-three">
@@ -266,7 +266,7 @@
 				<option value="RBSE" <?php if($data['board12']=='RBSE') echo " selected";?>>RBSE</option>
 				<option value="Other" <?php if($data['board12']=='Other') echo " selected";?>>Other</option>
 			</select>
-			{!! Form::text('diplomaCollege',null, ['class'=>'twelve columns fordiplomastudents','style'=>'display:none','placeholder'=>'Your College Of Diploma']) !!}
+			<!-- {!! Form::text('diplomaCollege',null, ['class'=>'twelve columns fordiplomastudents','style'=>'display:none','placeholder'=>'Your College Of Diploma']) !!} -->
 
 			<!-- {!! Form::select('board12', array('CBSE' => 'CBSE', 'RBSE' => 'RBSE' , 'other' => 'Other'), 'CBSE'); !!} -->
 
@@ -280,12 +280,12 @@
 
 
 
-		<div class="six columns offset-by-three">
+		<!-- <div class="six columns offset-by-three">
 			{!! Form::label('diplomaCollege','Diploma College') !!}
 			<span class="fa fa-check-circle-o"></span>
 			{!! Form::text('diplomaCollege',null, ['class'=>'twelve columns','placeholder'=>'Diploma College']) !!}
-		</div>
-
+		</div> -->
+		
 
 
 

@@ -1,4 +1,4 @@
-@extends('master')
+@extends('app')
 @section('content')
 
 	@foreach($myStudents as $myStudent)

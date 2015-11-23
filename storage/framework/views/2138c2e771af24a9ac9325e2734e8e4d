@@ -274,9 +274,30 @@
 
 		</div>
 		<div>
-			Diploma Candidate?<input id="ifDiploma" type="checkbox" name="ifDiploma" value="1">
+			<!-- Diploma Candidate?<input id="ifDiploma" type="checkbox" name="ifDiploma" value="1"> -->
 		</div>
+		<script type="text/javascript">
+			// $(document).ready(function(){
+			// 	// $('input[type=checkbox]').click(function(){
+			// 	// 	// $('select[name=board12]').remove();
+			// 	// 	$('.fordiplomastudents').show();
+			// 	// });
 
+			// 	$('#ifDiploma').change(function() {
+			// 	   if($(this).is(":checked")) {
+			// 			$('#lbl').html("Diploma College");
+			// 			$('.forbestudents').hide();
+			// 			$('input[name=diplomaCollege]').show();
+			// 	      return;
+			// 	   }
+			// 	   		//for BE Students
+			// 			$('.forbestudents').show();
+			// 			$('input[name=diplomaCollege]').hide();
+
+			// 	   //'unchecked' event code
+			// 	});
+			});
+		</script>
 		<div class="six columns offset-by-three">
 			<?php echo Form::label('board12','12th Board:',['id'=>'lbl']); ?>
 
@@ -286,8 +307,7 @@
 				<option value="RBSE" <?php if($data['board12']=='RBSE') echo " selected";?>>RBSE</option>
 				<option value="Other" <?php if($data['board12']=='Other') echo " selected";?>>Other</option>
 			</select>
-			<?php echo Form::text('diplomaCollege',null, ['class'=>'twelve columns fordiplomastudents','style'=>'display:none','placeholder'=>'Your College Of Diploma']); ?>
-
+			<!-- <?php echo Form::text('diplomaCollege',null, ['class'=>'twelve columns fordiplomastudents','style'=>'display:none','placeholder'=>'Your College Of Diploma']); ?> -->
 
 			<!-- <?php echo Form::select('board12', array('CBSE' => 'CBSE', 'RBSE' => 'RBSE' , 'other' => 'Other'), 'CBSE');; ?> -->
 
@@ -303,9 +323,14 @@
 
 
 
+		<!-- <div class="six columns offset-by-three">
+			<?php echo Form::label('diplomaCollege','Diploma College'); ?>
 
+			<span class="fa fa-check-circle-o"></span>
+			<?php echo Form::text('diplomaCollege',null, ['class'=>'twelve columns','placeholder'=>'Diploma College']); ?>
 
-
+		</div> -->
+		
 
 
 
@@ -514,4 +539,4 @@
 	<?php echo Form::close(); ?>
 
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

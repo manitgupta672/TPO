@@ -6,11 +6,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>MBM</title>
 
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-
+	<!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"> -->
+	
 	<!-- Fonts -->
-	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+	
+	<link href="{{ URL::asset('css/bootstrap.min.css') }}" rel='stylesheet'>
+	<!-- <link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'> -->
 	<script type="text/javascript" src="{{ URL::asset('js/jquery.js') }}"></script>
+	<script type="text/javascript" src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
 	
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -35,6 +38,9 @@
 			<div class="collapse navbar-collapse" id="navbar">
 				<ul class="nav navbar-nav">
 					<li><a href="{{ url('/') }}">Welcome</a></li>
+					@if(!auth()->guest())
+					<li><a href="{{ url('/' . auth()->user()->entity . '/panel') }}">My Account</a></li>
+					@endif
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
@@ -57,11 +63,14 @@
 			</div>
 		</div>
 	</nav>
+	<div class="container">
+		
 
 	@yield('content')
 
+	</div><!-- Container div close -->
 	<!-- Scripts -->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
+	<!-- // <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
 </body>
 </html>

@@ -1,4 +1,4 @@
-@extends('master')
+@extends('app')
 @section('content')
 
 <?php
@@ -11,82 +11,61 @@
 ?>
 
 <div>
-	<div id="nav">
+	<div id="nav" style="float:left; width:30%">
 		<form>
-			<br/><br/>
-			Upcoming Companies for You	<input type="radio" value="upcoming" name="selectOne" /><br/>
-			Companies You have applied for <input type="radio" value="applied" name="selectOne" /><br/>
-			All Companies <input type="radio" value="allCompanies" name="selectOne" /><br/>
+			<ul>
+				<li style="list-style:none;">Upcoming Companies for You	<input type="radio" value="upcoming" name="selectOne" /></li>
+				<li style="list-style:none;">Companies You have applied for <input type="radio" value="applied" name="selectOne" /></li>
+				<li style="list-style:none;">All Companies <input type="radio" value="allCompanies" name="selectOne" /></li>
+			</ul>
 		</form>		
 	</div>
 
-	<script type="text/javascript">
-	$(document).ready(function(){
-		$('#nav form input[value=upcoming]').click(function(){
-			// html("manit");
-			// alert("hello");
-			$('#ap').hide(500);
-			$('#all').hide(500);
-			$('#up').show(500);
-		});
-		$('#nav form input[value=applied]').click(function(){
-			// html("manit");
-			// alert("hello");
-			$('#all').hide(500);
-			$('#up').hide(500);
-			$('#ap').show(500);
-		});
-		$('#nav form input[value=allCompanies]').click(function(){
-			// html("manit");
-			// alert("hello");
-			$('#ap').hide(500);
-			$('#up').hide(500);
-			$('#all').show(500);
-		})
-	});
-	</script>
-	<div id="up" style="display:none;">
-		{!! Form::open(array('url'=>'/student/panel/placements/applyForCompany','method'=>'POST', 'id'=>'myform')) !!}
-			<h1>Upcoming Companies For You</h1>
+	<div style="float:right; width:70%; padding-left:10%; padding-top:2%" id="contennt">
+		<div id="up" style="display:none;">
+			{!! Form::open(array('url'=>'/student/panel/placements/applyForCompany','method'=>'POST', 'id'=>'myform')) !!}
+				<h1>Upcoming Companies For You</h1>
 
-			@foreach($upcomings as $upcoming)
+				@foreach($upcomings as $upcoming)
+				
+					<p>Company Name : {{ $upcoming->name }}</p>
+					<p>Company URL : {{ $upcoming->compUrl  }}</p>
+					<p>Company Email : {{ $upcoming->email }}</p>
+					<p>Selection Procedure : {{ $upcoming->selPro }}</p>
+				
+					<button type="submit" value="<?php echo $upcoming->user_id ; ?>" id="<?php echo $upcoming->user_id ; ?>" class="apply">Apply</button>
+					<hr/>
+				@endforeach
+			{!! Form::close() !!}		
+		</div>
+		<div id="ap" style="display:none;">
+			{!! Form::open(array('url'=>'/student/panel/placements/cancelApplicationForCompany','method'=>'POST', 'id'=>'myform2')) !!}
+				<h1>Applied Companies</h1>
+
+				@foreach($applieds as $applied)
+				
+					<p>Company Name : {{ $applied->name }}</p>
+					<p>Company URL : {{ $applied->compUrl  }}</p>
+					<p>Company Email : {{ $applied->email }}</p>
+					<p>Selection Procedure : {{ $applied->selPro }}</p>
+				
+					<button type="submit" value="<?php echo $applied->user_id ; ?>" id="<?php echo $applied->user_id ; ?>" class="delete">Delete</button>
+					<hr/>
+				@endforeach
+			{!! Form::close() !!}
 			
-				<p>Company Name : {{ $upcoming->name }}</p>
-				<p>Company URL : {{ $upcoming->compUrl  }}</p>
-				<p>Company Email : {{ $upcoming->email }}</p>
-				<p>Selection Procedure : {{ $upcoming->selPro }}</p>
-			
-				<button type="submit" value="<?php echo $upcoming->user_id ; ?>" id="<?php echo $upcoming->user_id ; ?>" class="apply">Apply</button>
+		</div>
+		<div id="all" style="display:none;">
+			<h1>All Companies</h1>
+
+			@foreach($allCompanies as $company)
+				<p>Company Name : {{ $company->name }}</p>
+				<p>Company URL : {{ $company->compUrl  }}</p>
+				<p>Company Email : {{ $company->email }}</p>
+				<p>Selection Procedure : {{ $company->selPro }}</p>
 				<hr/>
-			@endforeach
-		{!! Form::close() !!}		
-	</div>
-	<div id="ap" style="display:none;">
-		{!! Form::open(array('url'=>'/student/panel/placements/cancelApplicationForCompany','method'=>'POST', 'id'=>'myform2')) !!}
-			<h1>Applied Companies</h1>
-
-			@foreach($applieds as $applied)
-			
-				<p>Company Name : {{ $applied->name }}</p>
-				<p>Company URL : {{ $applied->compUrl  }}</p>
-				<p>Company Email : {{ $applied->email }}</p>
-				<p>Selection Procedure : {{ $applied->selPro }}</p>
-			
-				<button type="submit" value="<?php echo $applied->user_id ; ?>" id="<?php echo $applied->user_id ; ?>" class="delete">Delete</button>
-				<hr/>
-			@endforeach
-		{!! Form::close() !!}
-		
-	</div>
-	<div id="all" style="display:none;">
-		<h1>All Companies</h1>
-
-		@foreach($allCompanies as $company)
-			<p>Company Name : {{ $company->name }}</p>
-			<p>Company URL : {{ $company->compUrl  }}</p>
-			<p>Company Email : {{ $company->email }}</p>
-			<p>Selection Procedure : {{ $company->selPro }}</p>
-		@endforeach	
+			@endforeach	
+		</div>
 	</div>
 </div>
 
@@ -151,4 +130,29 @@
 
 </script>
 
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#nav form input[value=upcoming]').click(function(){
+			// html("manit");
+			// alert("hello");
+			$('#ap').hide(500);
+			$('#all').hide(500);
+			$('#up').show(500);
+		});
+		$('#nav form input[value=applied]').click(function(){
+			// html("manit");
+			// alert("hello");
+			$('#all').hide(500);
+			$('#up').hide(500);
+			$('#ap').show(500);
+		});
+		$('#nav form input[value=allCompanies]').click(function(){
+			// html("manit");
+			// alert("hello");
+			$('#ap').hide(500);
+			$('#up').hide(500);
+			$('#all').show(500);
+		})
+	});
+</script>
 @stop

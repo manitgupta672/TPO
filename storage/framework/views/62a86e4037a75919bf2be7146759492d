@@ -10,85 +10,64 @@
 ?>
 
 <div>
-	<div id="nav">
+	<div id="nav" style="float:left; width:30%">
 		<form>
-			<br/><br/>
-			Upcoming Companies for You	<input type="radio" value="upcoming" name="selectOne" /><br/>
-			Companies You have applied for <input type="radio" value="applied" name="selectOne" /><br/>
-			All Companies <input type="radio" value="allCompanies" name="selectOne" /><br/>
+			<ul>
+				<li style="list-style:none;">Upcoming Companies for You	<input type="radio" value="upcoming" name="selectOne" /></li>
+				<li style="list-style:none;">Companies You have applied for <input type="radio" value="applied" name="selectOne" /></li>
+				<li style="list-style:none;">All Companies <input type="radio" value="allCompanies" name="selectOne" /></li>
+			</ul>
 		</form>		
 	</div>
 
-	<script type="text/javascript">
-	$(document).ready(function(){
-		$('#nav form input[value=upcoming]').click(function(){
-			// html("manit");
-			// alert("hello");
-			$('#ap').hide(500);
-			$('#all').hide(500);
-			$('#up').show(500);
-		});
-		$('#nav form input[value=applied]').click(function(){
-			// html("manit");
-			// alert("hello");
-			$('#all').hide(500);
-			$('#up').hide(500);
-			$('#ap').show(500);
-		});
-		$('#nav form input[value=allCompanies]').click(function(){
-			// html("manit");
-			// alert("hello");
-			$('#ap').hide(500);
-			$('#up').hide(500);
-			$('#all').show(500);
-		})
-	});
-	</script>
-	<div id="up" style="display:none;">
-		<?php echo Form::open(array('url'=>'/student/panel/placements/applyForCompany','method'=>'POST', 'id'=>'myform')); ?>
+	<div style="float:right; width:70%; padding-left:10%; padding-top:2%" id="contennt">
+		<div id="up" style="display:none;">
+			<?php echo Form::open(array('url'=>'/student/panel/placements/applyForCompany','method'=>'POST', 'id'=>'myform')); ?>
 
-			<h1>Upcoming Companies For You</h1>
+				<h1>Upcoming Companies For You</h1>
 
-			<?php foreach($upcomings as $upcoming): ?>
+				<?php foreach($upcomings as $upcoming): ?>
+				
+					<p>Company Name : <?php echo e($upcoming->name); ?></p>
+					<p>Company URL : <?php echo e($upcoming->compUrl); ?></p>
+					<p>Company Email : <?php echo e($upcoming->email); ?></p>
+					<p>Selection Procedure : <?php echo e($upcoming->selPro); ?></p>
+				
+					<button type="submit" value="<?php echo $upcoming->user_id ; ?>" id="<?php echo $upcoming->user_id ; ?>" class="apply">Apply</button>
+					<hr/>
+				<?php endforeach; ?>
+			<?php echo Form::close(); ?>		
+		</div>
+		<div id="ap" style="display:none;">
+			<?php echo Form::open(array('url'=>'/student/panel/placements/cancelApplicationForCompany','method'=>'POST', 'id'=>'myform2')); ?>
+
+				<h1>Applied Companies</h1>
+
+				<?php foreach($applieds as $applied): ?>
+				
+					<p>Company Name : <?php echo e($applied->name); ?></p>
+					<p>Company URL : <?php echo e($applied->compUrl); ?></p>
+					<p>Company Email : <?php echo e($applied->email); ?></p>
+					<p>Selection Procedure : <?php echo e($applied->selPro); ?></p>
+				
+					<button type="submit" value="<?php echo $applied->user_id ; ?>" id="<?php echo $applied->user_id ; ?>" class="delete">Delete</button>
+					<hr/>
+				<?php endforeach; ?>
+			<?php echo Form::close(); ?>
+
 			
-				<p>Company Name : <?php echo e($upcoming->name); ?></p>
-				<p>Company URL : <?php echo e($upcoming->compUrl); ?></p>
-				<p>Company Email : <?php echo e($upcoming->email); ?></p>
-				<p>Selection Procedure : <?php echo e($upcoming->selPro); ?></p>
-			
-				<button type="submit" value="<?php echo $upcoming->user_id ; ?>" id="<?php echo $upcoming->user_id ; ?>" class="apply">Apply</button>
+		</div>
+		<div id="all" style="display:none;">
+			<h1>All Companies</h1>
+
+			<?php foreach($allCompanies as $company): ?>
+				<p>Company Name : <?php echo e($company->name); ?></p>
+				<p>Company URL : <?php echo e($company->compUrl); ?></p>
+				<p>Company Email : <?php echo e($company->email); ?></p>
+				<p>Selection Procedure : <?php echo e($company->selPro); ?></p>
 				<hr/>
-			<?php endforeach; ?>
-		<?php echo Form::close(); ?>		
-	</div>
-	<div id="ap" style="display:none;">
-		<?php echo Form::open(array('url'=>'/student/panel/placements/cancelApplicationForCompany','method'=>'POST', 'id'=>'myform2')); ?>
-
-			<h1>Applied Companies</h1>
-
-			<?php foreach($applieds as $applied): ?>
-			
-				<p>Company Name : <?php echo e($applied->name); ?></p>
-				<p>Company URL : <?php echo e($applied->compUrl); ?></p>
-				<p>Company Email : <?php echo e($applied->email); ?></p>
-				<p>Selection Procedure : <?php echo e($applied->selPro); ?></p>
-			
-				<button type="submit" value="<?php echo $applied->user_id ; ?>" id="<?php echo $applied->user_id ; ?>" class="delete">Delete</button>
-				<hr/>
-			<?php endforeach; ?>
-		<?php echo Form::close(); ?>
-
-		
-	</div>
-	<div id="all" style="display:none;">
-		<h1>All Companies</h1>
-
-		<?php foreach($allCompanies as $company): ?>
-			<p>Company Name : <?php echo e($company->name); ?></p>
-			<p>Company URL : <?php echo e($company->compUrl); ?></p>
-			<p>Company Email : <?php echo e($company->email); ?></p>
-			<p>Selection Procedure : <?php echo e($company->selPro); ?></p>
-		<?php endforeach; ?>	
+			<?php endforeach; ?>	
+		</div>
 	</div>
 </div>
 
@@ -153,5 +132,30 @@
 
 </script>
 
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#nav form input[value=upcoming]').click(function(){
+			// html("manit");
+			// alert("hello");
+			$('#ap').hide(500);
+			$('#all').hide(500);
+			$('#up').show(500);
+		});
+		$('#nav form input[value=applied]').click(function(){
+			// html("manit");
+			// alert("hello");
+			$('#all').hide(500);
+			$('#up').hide(500);
+			$('#ap').show(500);
+		});
+		$('#nav form input[value=allCompanies]').click(function(){
+			// html("manit");
+			// alert("hello");
+			$('#ap').hide(500);
+			$('#up').hide(500);
+			$('#all').show(500);
+		})
+	});
+</script>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

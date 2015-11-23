@@ -52,6 +52,13 @@ class User extends Model implements AuthenticatableContract,
             return false;
     }
 
+    public function isAdmin(){
+        if($this->entity == 'admin')
+            return true;
+        else
+            return false;
+    }
+
     
     
     public function jaf(){

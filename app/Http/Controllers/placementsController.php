@@ -28,41 +28,44 @@ class placementsController extends Controller
         }//currentSem field check
 
         $a = $this->appliedIn();
-        
 
         $percent = $studentData['aggregatePercent'];
         if($studentData['aggregatePercent'] < $studentData['averagePercent']){
             $percent = $studentData['averagePercent'];
         }//for allowing the students to register if either of their percentages(aggr/avg) crosses the cutoff.
 
+        if(isset($percent)){
+            $upcoming = DB::table('jaf')
+                ->join('users','jaf.user_id','=','users.id')
+                ->select('users.*','jaf.*')
+                ->where('studentPanelVisibilityStatus','1')
+                ->where('jaf.cutOff','<=',$percent)
+                ->whereNotIn('users.id',$a)
+                ->where('openFor','LIKE','%'.$studentData['branch'].'%') 
+                ->get();
 
-        $upcoming = DB::table('jaf')
-            ->join('users','jaf.user_id','=','users.id')
-            ->select('users.*','jaf.*')
-            ->where('studentPanelVisibilityStatus','1')
-            ->where('jaf.cutOff','<=',$percent)
-            ->whereNotIn('users.id',$a)
-            ->where('openFor','LIKE','%'.$studentData['branch'].'%') 
-            ->get();
+            $applied = DB::table('jaf')
+                ->join('users','jaf.user_id','=','users.id')
+                ->select('users.*','jaf.*')
+                ->where('studentPanelVisibilityStatus','1')
+                ->whereIn('users.id',$a)
+                ->get();
 
-        $applied = DB::table('jaf')
-            ->join('users','jaf.user_id','=','users.id')
-            ->select('users.*','jaf.*')
-            ->where('studentPanelVisibilityStatus','1')
-            ->whereIn('users.id',$a)
-            ->get();
+            $allCompanies = DB::table('jaf')
+                            ->join('users','jaf.user_id','=','users.id')
+                            ->select('users.*','jaf.*')
+                            ->where('studentPanelVisibilityStatus','1')
+                            ->get();
+                        
+            return view('student.placements')->with([
+                'upcomings'=>$upcoming,
+                'applieds'=>$applied,
+                'allCompanies'=>$allCompanies
+                ]);
+        } else {
+            return "Something is wrong with your aggregate/average Percentage calculation. Please ensure that your marks are entered correctly.";
+        }
 
-        $allCompanies = DB::table('jaf')
-                        ->join('users','jaf.user_id','=','users.id')
-                        ->select('users.*','jaf.*')
-                        ->where('studentPanelVisibilityStatus','1')
-                        ->get();
-                    
-        return view('student.placements')->with([
-            'upcomings'=>$upcoming,
-            'applieds'=>$applied,
-            'allCompanies'=>$allCompanies
-            ]);
     }
 
 
