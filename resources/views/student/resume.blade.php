@@ -12,7 +12,6 @@
 			{!! Form::text('fatherName',null,['class'=>'twelve columns','placeholder'=>'Father\'s Name']) !!}
 		</div>
 
-
 		<!-- <div class="two columns offset-by-two">
 			{!! Form::label('date','Date Of Birth:') !!}
 			<span class="fa fa-birthday-cake"></span>
@@ -94,34 +93,8 @@
 			<select name="gender">
 				<option value="Male" <?php if($data['gender'] == 'Male'){ echo "selected";} ?>>Male</option>
 				<option value="Female" <?php if($data['gender'] == 'Female'){ echo "selected";} ?>>Female</option>
-			</select>
-			<!-- Male<input type="radio" name="gender" value="Male" <?php if($data['gender'] == 'Male'){ echo "checked";} ?>>
-			Female<input type="radio" name="gender" value="Female" <?php if($data['gender'] == 'Female'){ echo "checked";} ?>>
-			 --><!-- {!! Form::select('gender', array('Male'=>'Male','Female'=>'Female'), 'Male'); !!} -->
-		</div>
-		 <!-- <div class="six columns offset-by-three">
-			{!! Form::label('gender','Gender :') !!}
-			<span class="fa fa-transgender"></span>
-			{!! Form::text('gender',null, ['class'=>'twelve columns','placeholder'=>'Male/Female','maxlength'=>'10','minlength'=>'1']) !!}
-		</div> -->	
-		<!-- <div class="six columns offset-by-three">
-			{!! Form::label('gender','Gender :') !!}
-			<span class="fa fa-transgender"></span>
-			<select id="gender">
-				<option value="M">Male</option>
-				<option value="F">Female</option>
 			</select>	
-			<script type="text/javascript">
-					$(document).ready(function(){
-					var gender = '{{ $data['gender'] }}';
-					$('#gender').children('option').each(function(){
-						if($(this).attr("value") == gender)
-							$(this).attr("selected","selected");
-					});	
-				});
-					
-			</script>
-		</div> -->
+		</div>
 
 		<div class="six columns offset-by-three">
 			{!! Form::label('address','Address') !!}
@@ -134,11 +107,7 @@
 			<span class="fa fa-map"></span>
 			{!! Form::text('city',null, ['class'=>'twelve columns','placeholder'=>'Jodhpur']) !!}
 		</div>
-		<!-- 
-		<div  class="six columns offset-by-three" style="height:70px;">
-			<hr><hr>
-		</div>
- -->
+	
 		<div class="six columns offset-by-three">
 			{!! Form::label('pinCode','Pincode :') !!}
 			<span class="fa fa-map-pin"></span>
@@ -177,9 +146,6 @@
 				<option value="MEC" <?php if($data['degree']=='MEC') echo " selected";?>>Mechanical Engineering</option>
 				<option value="MIN" <?php if($data['degree']=='MIN') echo " selected";?>>Mining Engineering</option>
 			</select>
-
-			<!-- {!! Form::text('branch',null, ['class'=>'twelve columns','placeholder'=>'CSE/ITE/ECE/ECC/EEE/MIN/EEL/CIV/CHE/MEC/BCT']) !!} -->
-			<!-- {!! Form::select('branch', array('CSE' => 'CSE', 'IT' => 'IT' , 'ECE' => 'ECE' , 'EEE' => 'EEE' , 'ECC' => 'ECC' , 'MIN' => 'Mining' , 'EE' => 'Electrical' , 'CIV' => 'Civil' , 'CHE' => 'Chemical' , 'MEC' => 'Mechanical' , 'BCT' => 'Building And Construction'), 'CSE'); !!} -->
 		</div>
 
 		<div class="six columns offset-by-three">
@@ -194,16 +160,7 @@
 				}
 			?>
 			</select>
-			<!-- {!! Form::text('currentSem',null, ['class'=>'twelve columns','placeholder'=>'1/2/3/4/5/6/7/8']) !!} -->
-			<!-- {!! Form::select('currentSem', array('1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5', '6' => '6', '7' => '7', '8' => '8'), '1'); !!} -->
 		</div>
-
-
-		<!-- <div class="six columns offset-by-three">
-			{!! Form::label('rollNo','New Roll No:') !!}
-			<span class="fa fa-circle-o"></span>
-			{!! Form::text('rollNo',null, ['class'=>'twelve columns','placeholder'=>'12CSE27026']) !!}
-		</div> -->
 
 		<div class="six columns offset-by-three">
 			{!! Form::label('facultyNo','Faculty No:') !!}
@@ -225,71 +182,61 @@
 				<option value="RBSE" <?php if($data['board10']=='RBSE') echo " selected";?>>RBSE</option>
 				<option value="Other" <?php if($data['board10']=='Other') echo " selected";?>>Other</option>
 			</select>
-			<!-- {!! Form::select('board10', array('CBSE' => 'CBSE', 'RBSE' => 'RBSE' , 'other' => 'Other'), 'CBSE'); !!} -->
-			<!-- {!! Form::text('board10',null, ['class'=>'twelve columns','placeholder'=>'CBSE/RBSE/Other']) !!} -->
 		</div>
+
 		<div class="six columns offset-by-three">
 			{!! Form::label('board10Percent','10th Board Percentage ') !!}
 			<span class="fa fa-check-circle-o"></span>
 			{!! Form::text('board10Percent',null, ['class'=>'twelve columns','placeholder'=>'95% or CGPA']) !!}
 		</div>
-		<div>
-			<!-- Diploma Candidate?<input id="ifDiploma" type="checkbox" name="ifDiploma" value="1"> -->
-		</div>
+
+		Diploma<input id="isDiploma" type="radio" name="isDiploma" value="1" <?php if($data['isDiploma']==1) echo "checked='checked'";?>>
+		12th<input id="istwelfth" type="radio" name="isDiploma" value="0" <?php if($data['isDiploma']==0) echo "checked='checked'";?>>
+		
 		<script type="text/javascript">
-			// $(document).ready(function(){
-			// 	// $('input[type=checkbox]').click(function(){
-			// 	// 	// $('select[name=board12]').remove();
-			// 	// 	$('.fordiplomastudents').show();
-			// 	// });
-
-			// 	$('#ifDiploma').change(function() {
-			// 	   if($(this).is(":checked")) {
-			// 			$('#lbl').html("Diploma College");
-			// 			$('.forbestudents').hide();
-			// 			$('input[name=diplomaCollege]').show();
-			// 	      return;
-			// 	   }
-			// 	   		//for BE Students
-			// 			$('.forbestudents').show();
-			// 			$('input[name=diplomaCollege]').hide();
-
-			// 	   //'unchecked' event code
-			// 	});
+			$(document).ready(function(){
+				if(document.getElementById('isDiploma').checked){
+					$('.forbe').hide();
+					$('.fordiploma').show();
+				} else {
+					$('.forbe').show();
+					$('.fordiploma').hide();
+				}
+				
+				$('input[type="radio"]').click(function(){
+					if($(this).attr('id')=='isDiploma'){
+						$('.forbe').hide();
+						$('.fordiploma').show();
+					} else {
+						$('.forbe').show();
+						$('.fordiploma').hide();
+					}
+				});
 			});
 		</script>
+
 		<div class="six columns offset-by-three">
-			{!! Form::label('board12','12th Board:',['id'=>'lbl']) !!}
-			<span class="fa fa-university forbestudents"></span>
-			<select name="board12" class="forbestudents">
+			{!! Form::label('board12','12th Board:',['id'=>'lbl','class'=>'forbe']) !!}
+			<span class="fa fa-university forbe"></span>
+			<select name="board12" class="forbe">
 				<option value="CBSE" <?php if($data['board12']=='CBSE') echo " selected";?>>CBSE</option>
 				<option value="RBSE" <?php if($data['board12']=='RBSE') echo " selected";?>>RBSE</option>
 				<option value="Other" <?php if($data['board12']=='Other') echo " selected";?>>Other</option>
 			</select>
-			<!-- {!! Form::text('diplomaCollege',null, ['class'=>'twelve columns fordiplomastudents','style'=>'display:none','placeholder'=>'Your College Of Diploma']) !!} -->
-
-			<!-- {!! Form::select('board12', array('CBSE' => 'CBSE', 'RBSE' => 'RBSE' , 'other' => 'Other'), 'CBSE'); !!} -->
-
-			<!-- {!! Form::text('board12',null, ['class'=>'twelve columns','placeholder'=>'CBSE/RBSE/Other']) !!} -->
 		</div>
+<!-- for diploma Candidates -->
 		<div class="six columns offset-by-three">
-			{!! Form::label('board12Percent','12th Board Percentage:') !!}
-			<span class="fa fa-check-circle-o"></span>
+			{!! Form::label('diplomaCollege','Diploma College:',['class'=>'fordiploma']) !!}
+			<span class="fa fa-check-circle-o fordiploma"></span>
+			{!! Form::text('diplomaCollege',null, ['class'=>'twelve columns fordiploma','placeholder'=>'Lachoo Memorial College, Jodhpur']) !!}
+		</div>
+<!-- Diploma Candidates ends -->
+		<div class="six columns offset-by-three">
+			{!! Form::label('board12Percent','12th Board Percentage:',['class'=>'forbe']) !!}
+			{!! Form::label('board12Percent','Diploma Percentage:',['class'=>'fordiploma']) !!}
+			<span class="fa fa-check-circle-o fordiploma"></span>
 			{!! Form::text('board12Percent',null, ['class'=>'twelve columns','placeholder'=>'95%']) !!}
 		</div>
-
-
-
-		<!-- <div class="six columns offset-by-three">
-			{!! Form::label('diplomaCollege','Diploma College') !!}
-			<span class="fa fa-check-circle-o"></span>
-			{!! Form::text('diplomaCollege',null, ['class'=>'twelve columns','placeholder'=>'Diploma College']) !!}
-		</div> -->
-		
-
-
-
-
 		<div class="six columns offset-by-three">
 			{!! Form::label('sem1','Sem 1 Marks:') !!}
 			<span class="fa fa-external-link-square"></span>
@@ -432,7 +379,7 @@
 		</div>
 
 		<div class="six columns offset-by-three">
-			{!! Form::submit('Complete Update',['class'=>'twelve columns btn button-primary']) !!}
+			{!! Form::submit('Submit',['class'=>'twelve columns btn button-primary']) !!}
 		</div>
 			<a href="/company/panel" class="button six columns offset-by-three">Cancel</a>
 

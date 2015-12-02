@@ -30,6 +30,10 @@ class studentController extends Controller
         $data = Auth::user()->resume;
         // echo $data['kt'];
         // print_r($data);
+        if($data['isDiploma']==1){
+            $data['diplomaCollege'] = $data['board12'];
+            unset($data['board12']);
+        }
         if(!empty($data['kt'])){
             $a = explode('-',$data['kt']);
             // print_r($a);
@@ -51,24 +55,17 @@ class studentController extends Controller
             $data['month'] = $date[1];
             $data['year'] = $date[2]; 
         }
-
-        // print_r($data);
-        // echo $data['date'];
-        // echo $data['month'];
-        // echo $data['year'];
-
-        // var_dump($data);
-        // $fields = array ( 'sem1kt', 'sem2kt', 'sem3kt', 'sem4kt', 'sem5kt', 'sem6kt', 'sem7kt', 'sem8kt',);
-        // $data = array_combine ( $fields, explode ( "-", $data['kt'] ) );
-        // echo "<br/><br/><br/>";
-        // var_dump($data);
         return view('student.resume')->with('data',$data);
     }
 
     public function resumeStore(Request $request){
             $in = Request::all();
-
             //setting kt's in one field.
+            if($in['isDiploma']==1){
+                $in['board12'] = $in['diplomaCollege'];
+            }
+            unset($in['diplomaCollege']);
+            
             $kt = $in['sem1kt'] . '-' . $in['sem2kt'] . '-' . $in['sem3kt'] . '-' . $in['sem4kt'] . '-' . $in['sem5kt'] . '-' . $in['sem6kt'] . '-' . $in['sem7kt'] . '-' . $in['sem8kt'];
             
             $totalkt =$in['sem1kt'] + $in['sem2kt'] + $in['sem3kt'] + $in['sem4kt'] + $in['sem5kt'] + $in['sem6kt'] + $in['sem7kt'] + $in['sem8kt']; 
@@ -90,28 +87,31 @@ class studentController extends Controller
             //unset all kt fields from the incoming data array.
             unset($in['date'], $in['month'], $in['year'], $in['sem1kt'] , $in['sem2kt'] , $in['sem3kt'] , $in['sem4kt'] , $in['sem5kt'] , $in['sem6kt'] , $in['sem7kt'] , $in['sem8kt']);
 
-            if( ! \Auth::user()->resume )
-            {
-               \Auth::user()->resume()->save(new Resume($in));
+            if(isset($in['averagePercent']) && isset($in['aggregatePercent']) && isset($in['dob'])){
+                if( ! \Auth::user()->resume ) {
+                   \Auth::user()->resume()->save(new Resume($in));
+                } else {
+                    $user = Auth::user();
+                    // $input = Request::except('_method', '_token');
+                    unset($in['_method'] , $in['_token']);
+                    $user->resume()->update($in);
+                }
+                return redirect('/student/panel');                
+            } else {
+                return "Sorry, your percentages could not be calculated due to some reason. Please try re-filling the resume form.";
             }
-            else
-            {
-                $user = Auth::user();
-                // $input = Request::except('_method', '_token');
-                unset($in['_method'] , $in['_token']);
-                $user->resume()->update($in);
-            }
-            return redirect('/student/panel');
+
+
         }
 
     public function printResume(){
 
         $data = Auth::user()->resume;
-        // echo $data['kt'];
-        // print_r($data);
+        if(!isset($data)){
+            return "Please fill in your resume first.";
+        }
         if(!empty($data['kt'])){
             $a = explode('-',$data['kt']);
-            // print_r($a);
 
             $data['sem1_kt'] = $a[0];
             $data['sem2_kt'] = $a[1];
@@ -126,9 +126,8 @@ class studentController extends Controller
 
 
 
-        // $myResume = Auth::user()->resume;
         $user = Auth::user()->toArray();
-        // var_dump();
+
         $data['name'] = $user['name'];
         $data['mobile'] = $user['mobile'];
         $data['newRoll'] = $user['newRoll'];
@@ -155,6 +154,14 @@ class studentController extends Controller
             ->get();
 
         return view('student.fellowStudentProfile')->with('fellowStudent',$fellowStudentProfile);
+    }
+
+    public function studentNews(){
+        $myNews = DB::table('news')
+            ->where('visibleTo','LIKE','%S%')
+            ->orderBy('updated_at','desc')
+            ->get();
+        return view('News.userNews')->with(['myNews'=>$myNews]);
     }
 
     /**

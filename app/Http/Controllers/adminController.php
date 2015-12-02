@@ -22,7 +22,7 @@ class adminController extends Controller
      */
     public function index()
     {
-        return view('admin.welcomeAdmin');
+        return view('admin.panel');
         // return view('admin.login');
     }
 
@@ -54,23 +54,11 @@ class adminController extends Controller
     }
 
     public function updateSetVisibilityStatus(Request $request){
-        // echo $request;
-        // $id = $request->input('jaf_id');
-        // $status = $request->input('status');
-        // echo $id . '<br/>' . $status;
-
         DB::table('jaf')
             ->where('id',$request->input('jaf_id'))
             ->update(['studentPanelVisibilityStatus'=>$request->input('status')]);
-        // echo $request->input('user_id');
         return $this->company($request->input('user_id'));   
-        // $a = $request::all();
-        // var_dump($request);
-        // DB::table('jaf')
-        //     ->where('id',$a['id'])
-        //     ->update(['studentPanelVisibilityStatus'=>0]);
-        // echo "Done";
-    }
+     }
 
     /**
      * Show the form for creating a new resource.

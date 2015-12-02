@@ -56,12 +56,6 @@ function branch_name($branch)
 }
 ?>
 
-<?php 
-// if(!isset($_GET['user_id'])) refresh('index');
-// $user_id = test_input($_GET['user_id']);
-// $result = mysqli_query($con,"SELECT * FROM resume WHERE user_id = '".$user_id."'");
-// $resume = mysqli_fetch_array($result);
-?>
 
 <?php
 $name = $resume['name'];
@@ -126,20 +120,13 @@ $proj1 = $resume['proj1'];
 $proj2 = $resume['proj2'];
 $extraCurricular = $resume['extraCurricular'];
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Resume Template</title>
-    <link rel="shortcut icon" href="../assets/users/img/webbed.ico"> <!-- TITLE ICON -->
-    <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="Webbed Resume Template" />
-    <meta charset="UTF-8">
-
+@extends('app')
+@section('datatables-stylesheet-and-js')
 	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" media="all" /> 
 	<link rel="stylesheet" type="text/css" href="../assets/users/css/resume.css" media="all" />
+@stop
 
-</head>
-<body>
+@section('content')
     <div class="social">
         <ul>
             <li>
@@ -318,6 +305,4 @@ $extraCurricular = $resume['extraCurricular'];
 
 </div><!--// doc -->
 
-
-</body>
-</html>
+@stop

@@ -28,9 +28,9 @@ class companyController extends Controller
     {
         //
     }
+
     // Display JAF form 
     public function jaf(){
-        // echo "string";
         $data = Auth::user()->jaf;
         return view('company.jaf')->with('data',$data);
     }
@@ -116,6 +116,14 @@ class companyController extends Controller
         // echo $myStudents;
         // var_dump($myStudents);            
         return view('company.myStudents')->with('myStudents',$myStudents);
+    }
+
+    public function companyNews(){
+        $myNews = DB::table('news')
+                ->where('visibleTo','LIKE','%C%')
+                ->orderBy('updated_at','desc')
+                ->get();
+            return view('News.userNews')->with(['myNews'=>$myNews]);
     }
 
     /**

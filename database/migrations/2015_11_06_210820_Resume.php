@@ -25,9 +25,10 @@ class Resume extends Migration
             $table->string('state');
             $table->string('degree');
             $table->string('branch');
-            $table->string('currentSem');
+            $table->integer('currentSem');
             $table->string('facultyNo');
             $table->string('enrollmentNo');
+            $table->tinyInteger('isDiploma')->default(0);
             $table->string('board10');
             $table->string('board10Percent');
             $table->string('board12');
@@ -60,9 +61,9 @@ class Resume extends Migration
             $table->integer('averagePercent');
             $table->string('kt');
             $table->integer('totalkt');
-            $table->string('proj1');
-            $table->string('proj2');
-            $table->string('extraCurricular');
+            $table->text('proj1');
+            $table->text('proj2');
+            $table->text('extraCurricular');
 
             $table->integer('user_id')->unsigned()->unique();
             $table->foreign('user_id')

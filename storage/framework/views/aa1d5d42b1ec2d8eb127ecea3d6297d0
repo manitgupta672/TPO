@@ -1,11 +1,33 @@
+<?php $__env->startSection('datatables-stylesheet-and-js'); ?>
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css">
+	<script type="text/javascript" src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+<?php $__env->stopSection(); ?>
+
+
 <?php $__env->startSection('content'); ?>
+<table id="fellowStudents">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Branch</th>
+			<th>Semester</th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php foreach($fellowStudents as $fellowStudent): ?>
+			<tr>
+				<td><a href="<?php echo e(action('studentController@fellowStudentProfile',[$fellowStudent->user_id])); ?>"><?php echo e($fellowStudent->name); ?></a></td>
+				<td><?php echo e($fellowStudent->branch); ?></td>
+				<td><?php echo e($fellowStudent->currentSem); ?></td>
+			</tr>
+		<?php endforeach; ?>
+	</tbody>
+</table>
 
-<?php foreach($fellowStudents as $fellowStudent): ?>
-<!-- <?php echo e($fellowStudent->user_id); ?> -->
-<!-- <?php echo e($fellowStudent->id); ?> -->
-	<a href="<?php echo e(action('studentController@fellowStudentProfile',[$fellowStudent->user_id])); ?>"><?php echo e($fellowStudent->name); ?></a>
-	<br/>
-<?php endforeach; ?>
-
+<script type="text/javascript">
+	$(document).ready( function () {
+	    $('#fellowStudents').DataTable();
+	} );
+</script>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

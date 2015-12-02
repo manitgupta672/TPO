@@ -42,7 +42,6 @@ class Jaf extends Migration
             // MEC/4-ECC/5-ITE/5
             $table->integer('user_id')->unsigned()->unique();
             $table->string('studentPanelVisibilityStatus');
-            
             // jafKey points to user
              $table->foreign('user_id')
                       ->references('id')

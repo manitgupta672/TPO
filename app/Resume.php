@@ -25,6 +25,7 @@ class Resume extends Model
      'enrollmentNo' ,
      'board10' ,
      'board10Percent' ,
+     'isDiploma' ,
      'board12' ,
      'board12Percent' ,
      'sem1' ,

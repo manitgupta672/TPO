@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password', 60);
             $table->string('mobile');
-            $table->string('newRoll');
+            $table->string('newRoll')->unique();
             $table->string('followUp');
             $table->boolean('confirmed')->default(0);
             $table->string('confirmationCode')->nullable();

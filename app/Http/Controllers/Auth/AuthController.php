@@ -50,7 +50,7 @@ class AuthController extends Controller
                 'email' => 'required|email|max:255|unique:users',
                 'mobile' => 'required|min:10',
                 'password' => 'required|confirmed|min:6',
-                'newRoll' => 'required|min:10|max:10' 
+                'newRoll' => 'required|min:10|max:10|unique:users' 
             ]);
         } elseif($data['entity']=='company'){
             return Validator::make($data, [
