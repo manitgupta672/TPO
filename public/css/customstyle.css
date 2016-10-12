@@ -1,0 +1,198 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+body,html{
+  height:100%;
+  font-family: Raleway, sans-serif !important;
+
+}
+.textwhite{
+	color:white !important;
+}
+.textcenter{
+	text-align: center;
+}
+.dropdown{
+	font-size: 0.8em;
+}
+.border-radius{
+	border-radius: 0px 0px 4px 4px !important;
+}
+.left-pane{
+	margin:0 ;	
+	height: 320%;
+	font-size: 1.1em;
+	padding:0 !important;
+}
+.bottom-padding-zero{
+	padding-bottom: 0 !important;
+}
+.input-field label{
+	color: #fff;
+}
+.icon-24px{
+font-size:20px !important;
+width: 20px !important;
+}
+.input-field .icon-24px ~ input, .input-field .icon-24px ~ textarea, .input-field .icon-24px ~ label {
+margin-left: 1.3rem;
+}
+
+.waves-effect{
+	display: block;
+}
+/* Vertical Bar Chart
+=================================================================== */
+
+.verticalChart {
+	width: 100%;
+}
+	
+.verticalChart .singleBar {
+	width: 11.5%;
+	float: left;
+	margin-left: 0.5%;
+	margin-right: 0.5%;
+}	
+	
+.verticalChart .singleBar .bar {
+	position: relative;
+	height: 200px;
+	background: rgba(255,255,255,0.2);
+	overflow: hidden;
+}
+	
+.verticalChart .singleBar .bar .value {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background: #fff;
+	color: #fff;
+}
+
+.verticalChart .singleBar .bar .value span{
+	position: absolute;
+	font-size: 12px;
+	bottom: 0;
+	width: 100%;
+	height: 20px;
+	color: #8d6e63 ;
+	text-shadow: 0px -1px 0px #fff, 0px 1px 0px #fff, 1px 0px 0px #fff, -1px 0px 0px #fff, -1px -1px 0px #fff,-1px 1px 0px #fff, 1px 1px 0px #fff, 1px -1px 0px #fff;
+	display: none;
+	text-align: center;
+}			
+
+.verticalChart .singleBar .title {
+	margin-top: 5px;
+	text-align: center;
+}
+.companytable  td{
+	padding: 5px 5px;
+}
+
+
+/* All Mobile Sizes (devices and browser)
+====================================================================== */
+@media only screen and (max-width: 767px) {
+	
+	.statbox,
+	.widget,
+	.box,
+	.circleStatsItemBox {
+		margin-bottom: 20px !important;
+	}
+}
+/* Higher than 960 (desktop devices)
+====================================================================== */
+@media only screen and (min-width: 980px) and (max-width: 1199px){
+	.statbox,
+	.widget,
+	.box,
+	.circleStatsItemBox {
+		margin-bottom: 20px;
+	}
+}
+
+/* Tablet Portrait (devices and browsers)
+====================================================================== */
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+	.statbox,
+	.widget,
+	.box,
+	.circleStatsItemBox {
+		margin-bottom: 22px;
+	}
+}
+
+	/* Circle stats
+=================================================================== */
+
+.circleStats {text-align: center; position: relative;}
+
+.circleStatsItemBox {
+	position: relative;
+	/*background: #67C2EF;*/
+	width:100%;
+	min-width: 130px; 
+	height: 160px;
+	margin-bottom: 28px;
+}
+
+.circleStatsItemBox .header {
+	background: rgba(255,255,255,0.2);
+	color: rgba(255,255,255,0.9);
+	width: 100%; 
+	height: 20px;
+	padding: 5px 0px;
+	position: absolute;
+	top: 0px;
+}
+
+.circleStatsItemBox .footer {
+	background: rgba(0,0,0,0.1);
+	color: rgba(255,255,255,0.9);
+	width: 100%; 
+	height: 30px;
+	padding: 5px 0px;
+	position: absolute;
+	bottom: 0px;
+}
+
+.circleStatsItemBox .footer .count{
+	font-size: 12px;
+}
+
+.circleStatsItemBox .footer .value{
+	font-weight: bold;
+}
+
+.percent {
+	font-size: 12px !important;
+	position: absolute !important;
+	top:75px !important; 
+	width: 100% !important; 
+	left: 0px !important;
+	text-align: center !important;
+	color: rgba(255,255,255,0.9) !important;
+}
+
+.circleStatsItemBox input {
+	cursor: default;
+	box-shadow: none;
+	border:none;
+	height: auto;
+	position: absolute;
+	/*top:30px;*/
+	padding: 5px 0px !important;
+	border-color: rgba(0, 0, 0, 0.8);
+}
+
+.circleStatsItemBox input:focus {
+	outline: 0;
+	outline: thin dotted 0;
+  	-webkit-box-shadow: none;
+       -moz-box-shadow: none;
+         	box-shadow: none;
+}
+
+.circleStatsItemBox .footer{
+
+}

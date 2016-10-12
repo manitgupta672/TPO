@@ -1,0 +1,1428 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"json",
+				"json_encode"
+			],
+			[
+				"child",
+				"childCategoryId"
+			],
+			[
+				"all",
+				"allowedVendors"
+			],
+			[
+				"gran",
+				"grandChildCategoryId"
+			],
+			[
+				"grandc",
+				"grandchildcategory"
+			],
+			[
+				"ven",
+				"vendors"
+			],
+			[
+				"retun",
+				"returnData"
+			],
+			[
+				"upda",
+				"updateRating"
+			],
+			[
+				"vendor",
+				"vendorRating"
+			],
+			[
+				"chil",
+				"childCategoryId"
+			],
+			[
+				"cate",
+				"category"
+			],
+			[
+				"catr",
+				"categories"
+			],
+			[
+				"user",
+				"user_id"
+			],
+			[
+				"vend",
+				"vendor"
+			],
+			[
+				"req",
+				"request"
+			],
+			[
+				"new",
+				"newUser"
+			],
+			[
+				"reu",
+				"returnData"
+			],
+			[
+				"No",
+				"noOfRows"
+			],
+			[
+				"for",
+				"foreach	foreach …"
+			],
+			[
+				"return",
+				"returnData"
+			],
+			[
+				"newUse",
+				"newUserId"
+			],
+			[
+				"inser",
+				"insertGetId"
+			],
+			[
+				"re",
+				"returnData"
+			],
+			[
+				"rese",
+				"resendOtp"
+			],
+			[
+				"unse",
+				"unset"
+			],
+			[
+				"Im",
+				"imgUrl"
+			],
+			[
+				"otp",
+				"otpStatus"
+			],
+			[
+				"retur",
+				"returnData"
+			],
+			[
+				"insert",
+				"inserted"
+			],
+			[
+				"create",
+				"created"
+			],
+			[
+				"data",
+				"database"
+			],
+			[
+				"sele",
+				"selected_landmark"
+			],
+			[
+				"landma",
+				"landmarkId"
+			],
+			[
+				"rest",
+				"restaurant"
+			],
+			[
+				"res",
+				"restaurant"
+			],
+			[
+				"php",
+				"phpCode"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"op",
+				"option	Tag"
+			],
+			[
+				"editRe",
+				"editRestaurantModalInstance"
+			],
+			[
+				"edit",
+				"editLandmarkModalInstance"
+			],
+			[
+				"exec",
+				"executeQuery"
+			],
+			[
+				"uibMo",
+				"uibModalInstance"
+			],
+			[
+				"editR",
+				"editRestaurantModalInstanceCtrl"
+			],
+			[
+				"uibM",
+				"uibModal"
+			],
+			[
+				"landm",
+				"landmarkId"
+			],
+			[
+				"lan",
+				"landmarkId"
+			],
+			[
+				"ci",
+				"cityId"
+			],
+			[
+				"city",
+				"cityId"
+			],
+			[
+				"restaura",
+				"restaurant"
+			],
+			[
+				"resta",
+				"restaurant"
+			],
+			[
+				"landmar",
+				"landmark_id"
+			],
+			[
+				"landmark",
+				"landmarkId"
+			],
+			[
+				"err",
+				"Error"
+			],
+			[
+				"open",
+				"openInsertRestaurantModalInstance"
+			],
+			[
+				"ani",
+				"animationsEnabled"
+			],
+			[
+				"ui",
+				"uibModal"
+			],
+			[
+				"uib",
+				"uibModal"
+			],
+			[
+				"anim",
+				"animation"
+			],
+			[
+				"vari",
+				"variableName"
+			],
+			[
+				"dele",
+				"deleteLandmarkModalInstanceCtrl"
+			],
+			[
+				"deleteLandmarkModal",
+				"deleteLandmarkModalInstance"
+			],
+			[
+				"anima",
+				"animationsEnabled"
+			],
+			[
+				"la",
+				"landmarkName"
+			],
+			[
+				"uibm",
+				"uibModalInstance"
+			],
+			[
+				"lo",
+				"log"
+			],
+			[
+				"resul",
+				"result2"
+			],
+			[
+				"mysql_num",
+				"mysql_num_rows"
+			],
+			[
+				"get",
+				"getQueryParameter"
+			],
+			[
+				"delete",
+				"deleteCityModalInstance"
+			],
+			[
+				"AddCityModalIns",
+				"AddCityModalInstanceCtrl"
+			],
+			[
+				"json_",
+				"json_encode"
+			],
+			[
+				"add",
+				"addCityForm"
+			],
+			[
+				"cit",
+				"cities"
+			],
+			[
+				"my",
+				"myData"
+			],
+			[
+				"r",
+				"rootScope"
+			],
+			[
+				"in",
+				"input	Tag"
+			],
+			[
+				"mysql_rows",
+				"mysql_num_rows"
+			],
+			[
+				"exe",
+				"executeQuery"
+			],
+			[
+				"div",
+				"divClass"
+			],
+			[
+				"jso",
+				"json_encode"
+			],
+			[
+				"sear",
+				"searchPeopleString"
+			],
+			[
+				"h",
+				"h1	Tag"
+			],
+			[
+				"fo",
+				"form	Tag"
+			],
+			[
+				"li",
+				"link	Tag"
+			],
+			[
+				"stat",
+				"status"
+			],
+			[
+				"trans",
+				"transitionAtZero"
+			],
+			[
+				"tran",
+				"transitionAtOne"
+			],
+			[
+				"sta",
+				"status"
+			],
+			[
+				"veri",
+				"verfiyIp"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "resources/views/student/settings.blade.php",
+			"settings":
+			{
+				"buffer_size": 4024,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "vendor/laravel/framework/src/Illuminate/Foundation/Auth/RegistersUsers.php",
+			"settings":
+			{
+				"buffer_size": 3404,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Searching 8 files for \"/welcome\"\n\n0 matches across 0 files\n\n\nSearching 5723 files for \"welcome\"\n\nC:\\xampp\\htdocs\\ManitPHP\\laravel28dec\\app\\Http\\Controllers\\adminController.php:\n   12  \n   13      public function __construct(){\n   14:         // $this->middleware('adminLevelOne',['only'=>'welcome']);\n   15          $this->middleware('admin');\n   16      }\n   ..\n   27      }\n   28  \n   29:     public function welcome(){\n   30:         // echo \"Welcome admin\";\n   31:         echo \"Welcome Admin\";\n   32  \n   33  \n\nC:\\xampp\\htdocs\\ManitPHP\\laravel28dec\\mbm.ac.in.sublime-workspace:\n  517  		\"/C/xampp/htdocs/ManitPHP/myFoodGuy/t/index.html\",\n  518  		\"/C/xampp/htdocs/ManitPHP/myFoodGuy/learningAngular/Three.html\",\n  519: 		\"/C/xampp/htdocs/ManitPHP/myFoodGuy/learningAngular/welcome.html\",\n  520  		\"/C/xampp/htdocs/ManitPHP/myFoodGuy/crudOne/try.php\",\n  521  		\"/C/xampp/htdocs/ManitPHP/myFoodGuy/crudOne/form-final.php\",\n  ...\n  528  		\"/C/xampp/htdocs/ManitPHP/myFoodGuy/crudOne/form-old.php\",\n  529  		\"/C/xampp/htdocs/ManitPHP/myFoodGuy/crudOne/form.php\",\n  530: 		\"/C/xampp/htdocs/ManitPHP/myFoodGuy/crudOne/welcome.php\",\n  531  		\"/C/xampp/htdocs/ManitPHP/myFoodGuy/crudOne/post.php\",\n  532  		\"/C/xampp/htdocs/ManitPHP/myFoodGuy/crudOne/phpCode.php\",\n  533: 		\"/C/xampp/htdocs/ManitPHP/myFoodGuy/crudOne/welcome.htm\",\n  534  		\"/C/xampp/htdocs/ManitPHP/myFoodGuy/crudOne/bootstrap-3.3.6/docs/_includes/components/wells.html\",\n  535  		\"/F/Workspaces/Python/path.py\"\n\nC:\\xampp\\htdocs\\ManitPHP\\laravel28dec\\resources\\views\\news.blade.php:\n    2  @section('content')\n    3  \n    4: 	<h1>Welcome to the news section of MBM Engineering College.</h1>\n    5  \n    6  @stop\n\nC:\\xampp\\htdocs\\ManitPHP\\laravel28dec\\resources\\views\\prelogin\\departments.blade.php:\n   31     <div class=\"row\">\n   32          <div class=\"push-s1 col s10\" style=\"text-align:justify;\">\n   33:                 <p>Welcome to the Training and Placement Cell's Website of <strong>MBM Engineering College, Jodhpur .</strong>\n   34          MBM Engineering College is one of the oldest engineering colleges in India. </p>\n   35  \n\nC:\\xampp\\htdocs\\ManitPHP\\laravel28dec\\resources\\views\\prelogin\\index.blade.php:\n   31     <div class=\"row\">\n   32          <div class=\"push-s1 col s10\" style=\"text-align:justify;\">\n   33:                 <p>Welcome to the Training and Placement Cell's Website of <strong>MBM Engineering College, Jodhpur .</strong>\n   34          MBM Engineering College is one of the oldest engineering colleges in India. </p>\n   35  \n\nC:\\xampp\\htdocs\\ManitPHP\\laravel28dec\\resources\\views\\prelogin\\procedure.blade.php:\n   41      <div class=\"col s10 push-s1 center-align\" style=\"font-size:1.6em; font-weight:bold;\">Facilities</div>\n   42  		<div class=\"push-s1 col s10\" style=\"text-align:justify;\">\n   43: 		<p>Besides a warm welcome, we provide companies with the following aid : </p>\n   44      <ol class=\"facilities\">\n   45  			<li>Large classrooms & halls for Pre-Placement Talks and Written Tests.</li>\n\nC:\\xampp\\htdocs\\ManitPHP\\laravel28dec\\resources\\views\\welcome.blade.php:\n  115     <div class=\"row\">\n  116          <div class=\"offset-by-one columns ten\" style=\"text-align:justify;\">\n  117:                 <p>Welcome to the Training and Placement Cell's Website of <strong>MBM Engineering College, Jodhpur .</strong>\n  118          MBM Engineering College is one of the oldest engineering colleges in India. </p>\n  119  \n\nC:\\xampp\\htdocs\\ManitPHP\\laravel28dec\\storage\\framework\\views\\1d622b932b32b7ff78b818b31ce696f6:\n   29     <div class=\"row\">\n   30          <div class=\"push-s1 col s10\" style=\"text-align:justify;\">\n   31:                 <p>Welcome to the Training and Placement Cell's Website of <strong>MBM Engineering College, Jodhpur .</strong>\n   32          MBM Engineering College is one of the oldest engineering colleges in India. </p>\n   33  \n\nC:\\xampp\\htdocs\\ManitPHP\\laravel28dec\\storage\\framework\\views\\21afc152280296cabbdee98eae660e8c:\n  115     <div class=\"row\">\n  116          <div class=\"offset-by-one columns ten\" style=\"text-align:justify;\">\n  117:                 <p>Welcome to the Training and Placement Cell's Website of <strong>MBM Engineering College, Jodhpur .</strong>\n  118          MBM Engineering College is one of the oldest engineering colleges in India. </p>\n  119  \n\nC:\\xampp\\htdocs\\ManitPHP\\laravel28dec\\storage\\framework\\views\\3dbc147345711982878267bf2cb46294:\n   31     <div class=\"row\">\n   32          <div class=\"push-s1 col s10\" style=\"text-align:justify;\">\n   33:                 <p>Welcome to the Training and Placement Cell's Website of <strong>MBM Engineering College, Jodhpur .</strong>\n   34          MBM Engineering College is one of the oldest engineering colleges in India. </p>\n   35  \n\nC:\\xampp\\htdocs\\ManitPHP\\laravel28dec\\storage\\framework\\views\\5d2ee430f7b04c4ff92e19b09d394074:\n   30     <div class=\"row\">\n   31          <div class=\"push-s1 col s10\" style=\"text-align:justify;\">\n   32:                 <p>Welcome to the Training and Placement Cell's Website of <strong>MBM Engineering College, Jodhpur .</strong>\n   33          MBM Engineering College is one of the oldest engineering colleges in India. </p>\n   34  \n\nC:\\xampp\\htdocs\\ManitPHP\\laravel28dec\\storage\\framework\\views\\61507b510d874056fece3c438774b163:\n  115     <div class=\"row\">\n  116          <div class=\"offset-by-one columns ten\" style=\"text-align:justify;\">\n  117:                 <p>Welcome to the Training and Placement Cell's Website of <strong>MBM Engineering College, Jodhpur .</strong>\n  118          MBM Engineering College is one of the oldest engineering colleges in India. </p>\n  119  \n\nC:\\xampp\\htdocs\\ManitPHP\\laravel28dec\\storage\\framework\\views\\c1dadf163e9dcb31017621f9168ab271:\n    1  <?php $__env->startSection('content'); ?>\n    2  \n    3: 	<h1>Welcome to the news section of MBM Engineering College.</h1>\n    4  \n    5  <?php $__env->stopSection(); ?>\n\nC:\\xampp\\htdocs\\ManitPHP\\laravel28dec\\storage\\framework\\views\\d5c98c9c6c913de64ba640f08bd4dc25:\n   31     <div class=\"row\">\n   32          <div class=\"push-s1 col s10\" style=\"text-align:justify;\">\n   33:                 <p>Welcome to the Training and Placement Cell's Website of <strong>MBM Engineering College, Jodhpur .</strong>\n   34          MBM Engineering College is one of the oldest engineering colleges in India. </p>\n   35  \n\nC:\\xampp\\htdocs\\ManitPHP\\laravel28dec\\storage\\framework\\views\\ed31a68f45e242059d4ef1433f96fd3c:\n   40  			<div class=\"collapse navbar-collapse\" id=\"navbar\">\n   41  				<ul class=\"nav navbar-nav\">\n   42: 					<li><a href=\"<?php echo e(url('/')); ?>\">Welcome</a></li>\n   43  					<?php if(!auth()->guest()): ?>\n   44  						<?php if(auth()->user()->entity==1): ?>\n\nC:\\xampp\\htdocs\\ManitPHP\\laravel28dec\\storage\\framework\\views\\f3aed46d5a7dff79c93842809a57c812:\n   41      <div class=\"col s10 push-s1 center-align\" style=\"font-size:1.6em; font-weight:bold;\">Facilities</div>\n   42  		<div class=\"push-s1 col s10\" style=\"text-align:justify;\">\n   43: 		<p>Besides a warm welcome, we provide companies with the following aid : </p>\n   44      <ol class=\"facilities\">\n   45  			<li>Large classrooms & halls for Pre-Placement Talks and Written Tests.</li>\n\nC:\\xampp\\htdocs\\ManitPHP\\laravel28dec\\vendor\\bestmomo\\scafold\\views\\app.blade.php:\n   34  			<div class=\"collapse navbar-collapse\" id=\"navbar\">\n   35  				<ul class=\"nav navbar-nav\">\n   36: 					<li><a href=\"{{ url('/') }}\">Welcome</a></li>\n   37  				</ul>\n   38  \n\nC:\\xampp\\htdocs\\ManitPHP\\laravel28dec\\vendor\\fzaninotto\\faker\\CONTRIBUTING.md:\n    2  ============\n    3  \n    4: If you've written a new formatter, adapted Faker to a new locale, or fixed a bug, your contribution is welcome!\n    5  \n    6  Before proposing a pull request, check the following:\n\nC:\\xampp\\htdocs\\ManitPHP\\laravel28dec\\vendor\\fzaninotto\\faker\\src\\Faker\\Provider\\en_US\\Text.php:\n  327       'How cheerfully he seems to grin,\n  328        How neatly spread his claws,\n  329:      And welcome little fishes in\n  330        With gently smiling jaws!'\n  331  \n\nC:\\xampp\\htdocs\\ManitPHP\\laravel28dec\\vendor\\fzaninotto\\faker\\src\\Faker\\Provider\\pl_PL\\Text.php:\n   23       *\n   24       *\n   25:      * **Welcome To The World of Free Plain Vanilla Electronic Texts**\n   26       *\n   27       * **eBooks Readable By Both Humans and By Computers, Since 1971**\n\nC:\\xampp\\htdocs\\ManitPHP\\laravel28dec\\vendor\\swiftmailer\\swiftmailer\\doc\\introduction.rst:\n   90  Until 2008 Chris was the sole developer of Swift Mailer, but entering 2009 he\n   91  gained the support of two experienced developers well-known to him: Paul\n   92: Annesley and Christopher Thompson. This has been an extremely welcome change.\n   93  \n   94  As of September 2009, Chris handed over the maintenance of Swift Mailer to\n\nC:\\xampp\\htdocs\\ManitPHP\\laravel28dec\\vendor\\swiftmailer\\swiftmailer\\lib\\classes\\Swift\\Transport\\AbstractSmtpTransport.php:\n  290      }\n  291  \n  292:     /** Send the HELO welcome */\n  293      protected function _doHeloCommand()\n  294      {\n\nC:\\xampp\\htdocs\\ManitPHP\\laravel28dec\\vendor\\symfony\\console\\Shell.php:\n  128          return <<<EOF\n  129  \n  130: Welcome to the <info>{$this->application->getName()}</info> shell (<comment>{$this->application->getVersion()}</comment>).\n  131  \n  132  At the prompt, type <comment>help</comment> for some help,\n\n28 matches across 23 files\n",
+			"settings":
+			{
+				"buffer_size": 9333,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "vendor/laravel/framework/src/Illuminate/Foundation/Auth/RedirectsUsers.php",
+			"settings":
+			{
+				"buffer_size": 1162,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "vendor/laravel/framework/src/Illuminate/Foundation/Auth/ResetsPasswords.php",
+			"settings":
+			{
+				"buffer_size": 3555,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "vendor/laravel/framework/src/Illuminate/Foundation/Auth/ThrottlesLogins.php",
+			"settings":
+			{
+				"buffer_size": 3216,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/views/home.blade.php",
+			"settings":
+			{
+				"buffer_size": 311,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/views/hi.blade.php",
+			"settings":
+			{
+				"buffer_size": 54,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/views/welcome.blade.php",
+			"settings":
+			{
+				"buffer_size": 16267,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/Controllers/placementsController.php",
+			"settings":
+			{
+				"buffer_size": 8188,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": ".env",
+			"settings":
+			{
+				"buffer_size": 315,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/Controllers/adminController.php",
+			"settings":
+			{
+				"buffer_size": 14909,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/Controllers/studentController.php",
+			"settings":
+			{
+				"buffer_size": 18123,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php",
+			"settings":
+			{
+				"buffer_size": 4883,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/xampp/htdocs/ManitPHP/laravel28dec/app/Http/Controllers/Auth/AuthController.php",
+		"/C/xampp/htdocs/ManitPHP/laravel28dec/app/Http/Controllers/Auth/PasswordController.php",
+		"/C/xampp/htdocs/ManitPHP/laravel28dec/app/Http/Controllers/professorController.php",
+		"/C/xampp/htdocs/ManitPHP/laravel28dec/app/Http/Controllers/studentController.php",
+		"/C/xampp/htdocs/ManitPHP/laravel28dec/resources/views/postloginmaster.blade.php",
+		"/C/xampp/htdocs/ManitPHP/laravel28dec/app/Http/Controllers/adminController.php",
+		"/C/xampp/htdocs/ManitPHP/laravel28dec/app/Http/Controllers/placementsController.php",
+		"/C/xampp/htdocs/ManitPHP/laravel28dec/app/Http/Controllers/passController.php",
+		"/C/xampp/htdocs/ManitPHP/laravel28dec/resources/views/admin/absenteesCampusProcedure.blade.php",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/learningAngular/adminPanel/functions.php",
+		"/C/xampp/htdocs/ManitPHP/genie/phpCode.php",
+		"/C/Users/manit/Desktop/ginie/startbootstrap-sb-admin-2-1.0.8/startbootstrap-sb-admin-2-1.0.8/dist/js/sb-admin-2.js",
+		"/C/xampp/htdocs/ManitPHP/mygini/database/migrations/2014_10_12_000000_create_users_table.php",
+		"/C/xampp/htdocs/ManitPHP/mygini/database/migrations/2016_03_15_111750_create_vendor_table.php",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/myfoodguy/api/get/default.php",
+		"/C/Users/manit/Downloads/one.php",
+		"/C/xampp/htdocs/ManitPHP/mygini/database/migrations/2016_03_20_045211_create_category_table.php",
+		"/C/xampp/htdocs/ManitPHP/mygini/database/migrations/2016_03_20_045725_create_images_table.php",
+		"/C/xampp/htdocs/ManitPHP/mygini/database/migrations/2016_03_20_050145_create_address_table.php",
+		"/C/xampp/htdocs/ManitPHP/mygini/database/migrations/2016_03_20_050531_create_subcategory_table.php",
+		"/C/xampp/htdocs/ManitPHP/mygini/app/Providers/RouteServiceProvider.php",
+		"/C/xampp/htdocs/ManitPHP/mygini/database/migrations/2016_03_20_080107_create_grand_child_table.php",
+		"/C/xampp/htdocs/ManitPHP/mygini/.env",
+		"/C/xampp/htdocs/ManitPHP/mygini/app/Http/routes.php",
+		"/C/xampp/htdocs/ManitPHP/mygini/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/myfoodguy/admin/notification.php",
+		"/C/xampp/apache/conf/extra/httpd-vhosts.conf",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/myfoodguy/api/sms.php",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/myfoodguy/api/db_conf.php",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/myfoodguy/.gitignore",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/myfoodguy/api/get/admin-deals.php",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/myfoodguy/api/post/order.php",
+		"/C/xampp/apache/conf/httpd.conf",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/myfoodguy/.htaccess",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/myfoodguy/api/get/.htaccess",
+		"/C/xampp/htdocs/ManitPHP/mygini/resources/views/auth/register.blade.php",
+		"/C/xampp/htdocs/ManitPHP/mygini/app/Http/Controllers/loginController.php",
+		"/C/xampp/htdocs/ManitPHP/mygini/resources/views/home.blade.php",
+		"/C/xampp/htdocs/ManitPHP/mygini/app/Http/Kernel.php",
+		"/C/xampp/htdocs/ManitPHP/mygini/config/app.php",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/learningAngular/send Notifications/restaurants-city-1090.html",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/learningAngular/adminPanel/city.html",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/learningAngular/adminPanel/restaurant.html",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/learningAngular/adminPanel/inde.html",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/learningAngular/adminPanel/area.html",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/learningAngular/adminPanel/css/style.css",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/learningAngular/adminPanel/start.html",
+		"/C/Users/manit/Documents/Neo4j/one.php",
+		"/C/xampp/php/one.php",
+		"/C/Users/manit/one.php",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/learningAngular/adminPanel/js/area_app.js",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/learningAngular/adminPanel/old/restaurant.html",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/learningAngular/adminPanel/one.html",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/learningAngular/adminPanel/js/city_app.js",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/learningAngular/adminPanel/try.html",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/crudOne/css-test.html",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/learningAngular/adminPanel/old/city.html",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/crudOne/bootstrap-3.3.6/dist/css/bootstrap.css",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/learningAngular/One Page/get.php",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/learningAngular/One Page/js/app.js",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/learningAngular/One Page/restaurantUpdate.html",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/learningAngular/One Page/index.html",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/learningAngular/One Page/restaurant.html",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/learningAngular/landmarks.html",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/learningAngular/get.php",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/learningAngular/index.html",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/landmarks.html",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/learningAngular/five.html",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/functions.php",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/learningAngular/six.html",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/t/js/app.js",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/learningAngular/modal.html",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/t/index.html",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/learningAngular/Three.html",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/learningAngular/welcome.html",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/crudOne/try.php",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/crudOne/form-final.php",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/learningAngular/four.html",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/learningAngular/two.html",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/learningAngular/one.html",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/manitOne/js/angular-1.4.9.js",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/manitOne/js/angular-route-1.4.9.js",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/crudOne/functions.php",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/crudOne/form-old.php",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/crudOne/form.php",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/crudOne/welcome.php",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/crudOne/post.php",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/crudOne/phpCode.php",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/crudOne/welcome.htm",
+		"/C/xampp/htdocs/ManitPHP/myFoodGuy/crudOne/bootstrap-3.3.6/docs/_includes/components/wells.html",
+		"/F/Workspaces/Python/path.py"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"C:\\xampp\\htdocs\\ManitPHP\\laravel28dec",
+			"C:\\xampp\\htdocs\\ManitPHP\\laravel28dec\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Auth"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"raw",
+			"welcome",
+			"/welcome",
+			"where(f",
+			"where( ",
+			"where(f",
+			"this",
+			"update(",
+			"//to get the otpStatus of this user",
+			"set",
+			"getRating",
+			"saveRating",
+			"parent",
+			"childCategoryIds",
+			"login",
+			"getGrandChildCategories",
+			"addGrandChildCategory",
+			"C",
+			"->unsigned()->unique()",
+			"getGrandChildCategories",
+			"returnData",
+			"otp",
+			"parent",
+			"allCategories",
+			"parent",
+			"child",
+			"Child",
+			"imageUrl",
+			"users",
+			"newUser",
+			"returnData",
+			"$i",
+			"i",
+			"success",
+			"code",
+			"returnData",
+			"update",
+			"mobile",
+			"$",
+			"string",
+			"subTitle",
+			"mfghost",
+			"\n\n",
+			"\\",
+			"dev.mfg",
+			"secret",
+			"homestead",
+			"row ",
+			"city",
+			"name",
+			"<input type=\"radio\" name=\"land\" >",
+			"col-md-9",
+			"md",
+			" form-group",
+			"form-input",
+			"		",
+			"\" ",
+			"insert-restaurant",
+			"deleteRestaurant",
+			"edit-restaurant",
+			"get.php",
+			"get",
+			"get-restaurants",
+			"myApp",
+			"button",
+			"x",
+			"deleteLandmarkModalInstanceCtrl",
+			"get.php?action",
+			"selected_city_id",
+			"select",
+			"phpCode.php?action=",
+			"var",
+			"phpCode.php?action=",
+			"get.php",
+			"getCitiesController",
+			"landmark",
+			"Link",
+			"navbar-red",
+			"inverse",
+			"top",
+			"lass=\"navbar-brand\" href=\"#\">WebSiteName</a>\n	    </div>",
+			"div",
+			"address",
+			"Address",
+			"div",
+			"md",
+			"button",
+			"editRes",
+			"editRestaurant",
+			"get.php?action=update",
+			"landmark",
+			"updateAction",
+			"updateAction(landmark)",
+			"button",
+			"editRestaurantForm",
+			"add",
+			"address",
+			"email",
+			"rest",
+			"Rest",
+			"rest",
+			"addRestaurantForm",
+			"openEditRestaurantModel",
+			"deleteRestaurant",
+			";\n",
+			"City",
+			"openDeleteConfirmationModal",
+			"deleteCityModalInstance",
+			"allCities",
+			"delete",
+			"city",
+			"deleteCityModalInstanceCtrl",
+			"openDeleteConfirmationModal",
+			"landmark.action",
+			"x.act",
+			"bordered",
+			".result",
+			"openInsertRestaurantModalInstance",
+			"openInsertRestaurantModalInstance.result",
+			"uibModalInstance",
+			"email",
+			"Email",
+			"email",
+			"Email",
+			"addCityForm",
+			"allLandmarks",
+			"variableName",
+			"key"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 12,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "resources/views/student/settings.blade.php",
+					"settings":
+					{
+						"buffer_size": 4024,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10,
+								25
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "vendor/laravel/framework/src/Illuminate/Foundation/Auth/RegistersUsers.php",
+					"settings":
+					{
+						"buffer_size": 3404,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 98.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"settings":
+					{
+						"buffer_size": 9333,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										289,
+										296
+									],
+									[
+										411,
+										418
+									],
+									[
+										446,
+										453
+									],
+									[
+										483,
+										490
+									],
+									[
+										778,
+										785
+									],
+									[
+										1117,
+										1124
+									],
+									[
+										1315,
+										1322
+									],
+									[
+										1595,
+										1602
+									],
+									[
+										1891,
+										1898
+									],
+									[
+										2311,
+										2318
+									],
+									[
+										2815,
+										2822
+									],
+									[
+										3208,
+										3215
+									],
+									[
+										3644,
+										3651
+									],
+									[
+										4090,
+										4097
+									],
+									[
+										4526,
+										4533
+									],
+									[
+										4962,
+										4969
+									],
+									[
+										5408,
+										5415
+									],
+									[
+										5786,
+										5793
+									],
+									[
+										6118,
+										6125
+									],
+									[
+										6580,
+										6587
+									],
+									[
+										6997,
+										7004
+									],
+									[
+										7404,
+										7411
+									],
+									[
+										7664,
+										7671
+									],
+									[
+										7944,
+										7951
+									],
+									[
+										8159,
+										8166
+									],
+									[
+										8639,
+										8646
+									],
+									[
+										8920,
+										8927
+									],
+									[
+										9108,
+										9115
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								61,
+								61
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"output_tag": 2,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 199.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "vendor/laravel/framework/src/Illuminate/Foundation/Auth/RedirectsUsers.php",
+					"settings":
+					{
+						"buffer_size": 1162,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7,
+								45
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "vendor/laravel/framework/src/Illuminate/Foundation/Auth/ResetsPasswords.php",
+					"settings":
+					{
+						"buffer_size": 3555,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 637.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "vendor/laravel/framework/src/Illuminate/Foundation/Auth/ThrottlesLogins.php",
+					"settings":
+					{
+						"buffer_size": 3216,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1092.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "resources/views/home.blade.php",
+					"settings":
+					{
+						"buffer_size": 311,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "resources/views/hi.blade.php",
+					"settings":
+					{
+						"buffer_size": 54,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "resources/views/welcome.blade.php",
+					"settings":
+					{
+						"buffer_size": 16267,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1365.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "app/Http/Controllers/placementsController.php",
+					"settings":
+					{
+						"buffer_size": 8188,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5447,
+								5449
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1859.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": ".env",
+					"settings":
+					{
+						"buffer_size": 315,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								315,
+								315
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "app/Http/Controllers/adminController.php",
+					"settings":
+					{
+						"buffer_size": 14909,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1927,
+								1931
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 897.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "app/Http/Controllers/studentController.php",
+					"settings":
+					{
+						"buffer_size": 18123,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								40,
+								49
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php",
+					"settings":
+					{
+						"buffer_size": 4883,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								105,
+								105
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"registersu",
+				"/C/xampp/htdocs/ManitPHP/laravel28dec/vendor/laravel/framework/src/Illuminate/Foundation/Auth/RegistersUsers.php"
+			],
+			[
+				"placemncon",
+				"app/Http/Controllers/placementsController.php"
+			],
+			[
+				"redirects",
+				"vendor/laravel/framework/src/Illuminate/Foundation/Auth/RedirectsUsers.php"
+			],
+			[
+				"placeme",
+				"app/Http/Controllers/placementsController.php"
+			],
+			[
+				"registers",
+				"vendor/laravel/framework/src/Illuminate/Foundation/Auth/RegistersUsers.php"
+			],
+			[
+				"post",
+				"resources/views/postloginmaster.blade.php"
+			],
+			[
+				"admincon",
+				"app/Http/Controllers/adminController.php"
+			],
+			[
+				"creategran",
+				"database/migrations/2016_03_20_080107_create_grand_child_table.php"
+			],
+			[
+				"route",
+				"app/Http/routes.php"
+			],
+			[
+				"logi",
+				"app/Http/Controllers/loginController.php"
+			],
+			[
+				"adminc",
+				"app/Http/Controllers/adminController.php"
+			],
+			[
+				"createsub",
+				"database/migrations/2016_03_20_050531_create_subcategory_table.php"
+			],
+			[
+				"createcategory",
+				"database/migrations/2016_03_20_045211_create_category_table.php"
+			],
+			[
+				"createve",
+				"database/migrations/2016_03_15_111750_create_vendor_table.php"
+			],
+			[
+				"routes",
+				"app/Providers/RouteServiceProvider.php"
+			],
+			[
+				"createuse",
+				"database/migrations/2014_10_12_000000_create_users_table.php"
+			],
+			[
+				"createven",
+				"database/migrations/2016_03_15_111750_create_vendor_table.php"
+			],
+			[
+				"createuser",
+				"database/migrations/2014_10_12_000000_create_users_table.php"
+			],
+			[
+				"authu",
+				"vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php"
+			],
+			[
+				"config/a",
+				"config/app.php"
+			],
+			[
+				"loginc",
+				"app/Http/Controllers/loginController.php"
+			],
+			[
+				"new",
+				"bootstrap-3.3.6/docs/_includes/components/wells.html"
+			],
+			[
+				"postloginmase",
+				"resources/views/postloginmaster.blade.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 315.0,
+	"status_bar_visible": true
+}

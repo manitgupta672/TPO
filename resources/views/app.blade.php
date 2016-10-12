@@ -1,76 +1,128 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>MBM</title>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MBM : STUDENT PANEL</title>
 
-	<!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"> -->
-	
-	<!-- Fonts -->
-	
-	<link href="{{ URL::asset('css/bootstrap.min.css') }}" rel='stylesheet'>
-	<!-- <link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'> -->
-	<script type="text/javascript" src="{{ URL::asset('js/jquery.js') }}"></script>
-	<script type="text/javascript" src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
-	@yield('datatables-stylesheet-and-js')<!-- So that these are included only in fellowStudents page -->
-</head>
-<body>
-	<nav class="navbar navbar-default">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
-					<span class="sr-only">Toggle Navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">MBM</a>
-			</div>
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
 
-			<div class="collapse navbar-collapse" id="navbar">
-				<ul class="nav navbar-nav">
-					<li><a href="{{ url('/') }}">Welcome</a></li>
-					@if(!auth()->guest())
-					<li><a href="{{ url('/' . auth()->user()->entity . '/panel') }}">My Account</a></li>
-					@endif
-				</ul>
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
 
-				<ul class="nav navbar-nav navbar-right">
-					@if(auth()->guest())
-						@if(!Request::is('auth/login'))
-							<li><a href="{{ url('/auth/login') }}">Login</a></li>
-						@endif
-						@if(!Request::is('auth/register'))
-							<li><a href="{{ url('/auth/register') }}">Register</a></li>
-						@endif
-					@else
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ auth()->user()->name }} <span class="caret"></span></a>
-							<ul class="dropdown-menu" role="menu">
-								<li><a href="{{ url('/auth/logout') }}">Logout</a></li>
-							</ul>
-						</li>
-					@endif
-				</ul>
-			</div>
-		</div>
-	</nav>
-	<div class="container">
-		
+    <link rel="shortcut icon" href="img/mbm.ico">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href={{ URL::asset('/css/materialize.min.css') }}  media="screen,projection"/>
+    <link rel="stylesheet" type="text/css" href={{ URL::asset('/css/customstyle.css') }}>
+			
+    
+    <script type="text/javascript" src="{{ URL::asset('/js/jquery.min.js') }}"></script>
+		<script type="text/javascript" src="/js/materialize.js"></script>
+		<script type="text/javascript">
+			 $(document).ready(function() {
+					$('select').material_select();
+			});		
+		</script>
+    @yield('datatables-stylesheet-and-js')<!-- So that these are included only in fellowStudents page -->
+    @yield('some-specialized-css-and-js')
+    </head>
+
+    <body>
+            <!-- Header Start -->
+
+         <nav class="blue-grey darken-3 z-depth-3" style="border-radius:0 0 5px 5px;" >
+          <div class="nav">
+            <a href="" class="brand-logo valign" style="border-radius:50% 50%; margin:5px;"><img src="/img/logo.png"/></a>
+            
+            <ul class="hide-on-med-and-up col m12 l12 s12">
+              <li class="waves-effect waves-light dropdown-button" data-activates="dropdown3"><i class="medium material-icons">list</i></li>
+            </ul>
+            <ul id="dropdown3" class="dropdown-content col s12 m12 l12 ">
+              <li class="teal lighten-1 textwhite"><a href="#!" class="textwhite">Jump To</a></li>
+              <li class=""><a href="#!">Dashboard</a></li>
+<!--              <li class=""><a href="#!">Notifs</a></li>-->
+              <li class=""><a href="#!">News</a></li>
+              <li class=""><a href="#!">Fellow Mates</a></li>
+              <li class=""><a href="#!">Resume</a></li>
+<!--              <li class=""><a href="#!">Calendar</a></li>-->
+            </ul>
+
+            <ul id="nav-mobile" class="right">
+              <ul id="dropdown2" class="dropdown-content right">
+                @if(auth()->guest())
+                  @if(!Request::is('auth/login'))
+                    <li><a href="{{ url('/auth/login') }}">Login</a></li>
+                  @endif
+                  @if(!Request::is('auth/register'))
+                    <li><a href="{{ url('/auth/register') }}">Register</a></li>
+                  @endif
+                @else
+                <li class="teal lighten-1 textwhite"><a href="" class="textwhite"><i class="tiny material-icons">perm_identity </i>{{ auth()->user()->name }}</a></li>
+                @endif
+                <li class=""><a href=""><i class="tiny material-icons">insert_chart</i> Account Settings</a></li>
+                <li class=""><a href="/auth/logout"><i class="tiny material-icons">power_settings_new</i> Logout</a></li>
+              </ul>
+              @if(!auth()->guest())
+              <li><a class="btn dropdown dropdown-button right col" href="" data-activates="dropdown2"><span class="hide-on-small-only ">{{ auth()->user()->name }} </span><i class="line-height mdi-navigation-arrow-drop-down-circle right"></i></a></li>
+              @endif
+            </ul>
+          </div>
+        </nav>
+        <!-- Header Ends -->
+
+
+        
+
 
 	@yield('content')
 
-	</div><!-- Container div close -->
-	<!-- Scripts -->
-	<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
-	<!-- // <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
-</body>
-</html>
+
+
+
+	<!-- Footer Starts -->
+      <div class="blue-grey darken-3 textwhite center-align"> Designed & Developed By : Manit Gupta & Vedant Jain </div>
+      <!-- Footer Ends -->
+
+      <!--Import jQuery before materialize.js-->
+      <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script> -->
+      
+    </body>
+  </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

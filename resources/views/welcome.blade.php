@@ -22,19 +22,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>M.B.M Jodhpur</title>
+    <title>M.B.M </title>
     <link rel="shortcut icon" href="/img/mbm.ico" type="image/x-icon" />
     <!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
     <link rel="stylesheet" type="text/css" href="/css/social.css">
 
-    <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="/css/skeleton.css">
     <link rel="stylesheet" type="text/css" href="/css/menu.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link rel="stylesheet" type="text/css" href="/css/slider.css">
     <link rel="stylesheet" type="text/css" href="/css/gototop.css">
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.js"></script>
     <script type="text/javascript" src="/js/headtacular.min.js"></script>
     <script src="/js/nt.js"></script>
     <script src="/js/scrollSpeed.js"></script>
@@ -71,7 +71,17 @@
            <li><a href="auth/login">Sign In</a></li>
            <li><a href="auth/register">Register</a></li>
            @else
-           <li><a href="{{ url('/' . auth()->user()->entity . '/panel') }}">My Account</a></li>
+              @if(auth()->user()->entity==1)
+              <li><a href="{{ url('/student/panel') }}">My Account</a></li>
+              @elseif(auth()->user()->entity==2)
+                <li><a href="{{ url('/company/panel') }}">My Account</a></li>
+              @elseif(auth()->user()->entity==3)
+                <li><a href="{{ url('/alumni/panel') }}">My Account</a></li>
+              @elseif(auth()->user()->entity==4)
+                <li><a href="{{ url('/professor/panel') }}">My Account</a></li>
+              @elseif(auth()->user()->entity==5)
+                <li><a href="{{ url('/admin/panel') }}">My Account</a></li>
+              @endif
            @endif
            <!-- <li><a href='javascript:void(0);' class="open-popup" data-id="popup_3" data-animation="scaleUp" >Sign In</a></li> -->
         </ul>
@@ -246,8 +256,8 @@
     <p style="text-align:center; font-size:14px;"> <span class="fa fa-copyright"></span> 2015 MBM Site All Rights Reserved </p>
 </div>
 <!-- Google Map Scripts -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXQnHj2Vs4BhZfp2wHkV4Voa9jMKBIMnY&callback=initMap"
-        async defer></script>
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXQnHj2Vs4BhZfp2wHkV4Voa9jMKBIMnY&callback=initMap"
+        async defer></script>-->
 <script>
  var contentString = "<p><strong>Mungniram Bangur Memorial College is one of the oldest and reputed college in India.</strong></p>"+
  "<p><span class=\"fa fa-phone\"></span> Call : 0291 - 2551566 &nbsp; <span class=\"fa fa-external-link\"></span> Web : www.mbm.ac.in</p>";

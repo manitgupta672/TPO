@@ -22,8 +22,40 @@ class companyController extends Controller
     }
     
     public function postLoginPage(){
-        return view('company.panel');
+
+        $data = Auth::user()->jaf;
+							
+        if(!isset($data)){
+            return view('company.panel');
+        }
+
+        $branches = array_filter(explode('-',$data['openFor']));
+        foreach ($branches as $key => $value) {
+            $branches[$key] = substr($branches[$key],0,-2);
+        }
+
+            $numberOfEligibleStudents = DB::table('users')
+            ->leftJoin('resume','resume.user_id','=','users.id')
+            ->where('entity',1)
+            ->where('resume.totalkt','<=',$data['ktAllowed'])
+            ->where(DB::raw('GREATEST(resume.averagePercent,resume.aggregatePercent)'),'>=',$data['cutOff'])
+            ->whereIn('users.branch',$branches)
+            ->count();
+
+        $numberOfAppliedStudents = DB::table('placements')
+                                    ->where('company_id',$data['user_id'])
+                                    ->count();
+                    
+        return view('company.panel')->with([
+            'numberOfAppliedStudents'=>$numberOfAppliedStudents,
+            'numberOfEligibleStudents'=>$numberOfEligibleStudents,
+            'data'=>$data
+            ]);
+    
     }
+
+
+
     public function index()
     {
         //
@@ -83,6 +115,7 @@ class companyController extends Controller
         return view('company.editProfile');
     }
 
+    //shows all eligible students 
     public function myStudents(){
         // echo "These are my branches.";
         // echo Auth::user()->id;
@@ -101,7 +134,7 @@ class companyController extends Controller
         $numOfKTallowed = Auth::user()->jaf->ktAllowed;
         $myStudents = DB::table('users')
                     ->leftJoin('resume','users.id','=','resume.user_id')
-                    ->whereIn('resume.branch', $branch)
+                    ->whereIn('users.branch', $branch)
                     ->whereIn('currentSem',[7,8])
                     ->where(function($query) use ($cutOff) {
                         $query ->where('aggregatePercent','>',$cutOff)
@@ -118,6 +151,123 @@ class companyController extends Controller
         return view('company.myStudents')->with('myStudents',$myStudents);
     }
 
+
+				public function getPercentRangeStudentsOfBranch($branch){
+
+								// belowFiftyFive
+								$graph[0] = DB::table('users')
+														->join('resume','resume.user_id','=','users.id')
+														->where('entity','1')
+														->where('branch',$branch)
+														->where(DB::raw('GREATEST(resume.averagePercent,resume.aggregatePercent)'),'<',55)
+														->count();
+								// echo $belowFiftyFive;
+
+				// fiftyFiveTosixty
+								$graph[1] = DB::table('users')
+														->join('resume','resume.user_id','=','users.id')
+														->where('entity','1')
+														->where('branch',$branch)
+														->where(DB::raw('GREATEST(resume.averagePercent,resume.aggregatePercent)'),'>=',55)
+														->where(DB::raw('GREATEST(resume.averagePercent,resume.aggregatePercent)'),'<',60)
+														->count();
+								// echo $fiftyFiveTosixty;
+
+				// sixtyToSixtyFive
+								$graph[2] = DB::table('users')
+														->join('resume','resume.user_id','=','users.id')
+														->where('entity','1')
+														->where('branch',$branch)
+														->where(DB::raw('GREATEST(resume.averagePercent,resume.aggregatePercent)'),'>=',60)
+														->where(DB::raw('GREATEST(resume.averagePercent,resume.aggregatePercent)'),'<',65)
+														->count();
+								// echo $sixtyToSixtyFive;
+
+				// sixtyFiveToSeventy
+								$graph[3] = DB::table('users')
+														->join('resume','resume.user_id','=','users.id')
+														->where('entity','1')
+														->where('branch',$branch)
+														->where(DB::raw('GREATEST(resume.averagePercent,resume.aggregatePercent)'),'>=',65)
+														->where(DB::raw('GREATEST(resume.averagePercent,resume.aggregatePercent)'),'<',70)
+														->count();
+								// echo $sixtyFiveToSeventy;
+
+				// seventyToSeventyFive
+								$graph[4] = DB::table('users')
+														->join('resume','resume.user_id','=','users.id')
+														->where('entity','1')
+														->where('branch',$branch)
+														->where(DB::raw('GREATEST(resume.averagePercent,resume.aggregatePercent)'),'>=',70)
+														->where(DB::raw('GREATEST(resume.averagePercent,resume.aggregatePercent)'),'<',75)
+														->count();
+								// echo $seventyToSeventyFive;        
+
+				// seventyToSeventyFive
+								$graph[5] = DB::table('users')
+														->join('resume','resume.user_id','=','users.id')
+														->where('entity','1')
+														->where('branch',$branch)
+														->where(DB::raw('GREATEST(resume.averagePercent,resume.aggregatePercent)'),'>=',75)
+														->count();
+								// echo $aboveSeventyFive;
+					
+						$graph[6] = DB::table('users')
+														->where('entity','1')
+														->where('branch',$branch)
+														->count();
+
+        return $graph;
+
+    }
+	
+
+    public function getOpenForBranches(){
+        $branches =array_filter(explode('-', Auth::user()->jaf['openFor']));
+        foreach ($branches as $key => $value) {
+          if($value != 'MCA')  
+						$value = substr($value,0,-2);
+        }
+        // var_dump($branches);
+        return view('company.myBranches')->with('branches',$branches);
+    }
+
+    public function getStudentsOfBranch($branch){
+        // $branch = substr($branch,0,-2);
+        $branches = array_filter(explode('-', Auth::user()->jaf['openFor']));
+        // echo $branch;
+        // var_dump($branches);
+			
+				$graph = $this->getPercentRangeStudentsOfBranch(substr($branch,0,-2));
+					
+        if(in_array($branch,$branches)){
+            $branchStudents = DB::table('users')
+                ->where('users.entity',1)
+                ->where('users.branch',substr($branch,0,-2))
+                ->join('resume','resume.user_id','=','users.id')
+                ->select('users.name','resume.aggregatePercent','resume.averagePercent','resume.currentSem','users.id')
+                ->get();
+            
+            return view('company.branchStudents')->with(['branchStudents'=>$branchStudents,'graph'=>$graph]);
+        } else {
+            $branchStudents = null;
+            return view('company.branchStudents')->with('branchStudents',$branchStudents);
+        }
+    }
+
+    public function settingsPage(){
+        $settingsData = Auth::user();
+
+        return view('company.settings')->with('data',$settingsData);
+    }
+
+    public function settingsPageStore(Request $request){
+        $in = Request::all();   
+        $user = \Auth::user();
+        $user->update($in);
+        return $this->postLoginPage();
+    }
+
     public function companyNews(){
         $myNews = DB::table('news')
                 ->where('visibleTo','LIKE','%C%')
@@ -126,58 +276,49 @@ class companyController extends Controller
             return view('News.userNews')->with(['myNews'=>$myNews]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+		
+		public function studentProfile($stuid){
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        $da = DB::table('users')
+                ->join('resume','resume.user_id','=','users.id')
+                ->where('entity',1)
+                ->where('users.id',$stuid)
+                ->select('resume.*','users.*')
+                ->first();
+        $data = (array)$da;
+			
+        if(!isset($data)){
+            return "Please fill in your resume first.";
+        }
+        // $ktString = $data
+        if(!empty($data['kt'])) {
+            $a = explode('-',$data['kt']);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+            $data['sem1_kt'] = $a[0];
+            $data['sem2_kt'] = $a[1];
+            $data['sem3_kt'] = $a[2];
+            $data['sem4_kt'] = $a[3];
+            $data['sem5_kt'] = $a[4];
+            $data['sem6_kt'] = $a[5];
+            $data['sem7_kt'] = $a[6];
+            $data['sem8_kt'] = $a[7];
+        }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+        // var_dump($data);
+        // dd($data);
+        // echo $data['sem1_kt'];
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+
+        // $user = Auth::user()->toArray();
+
+        // $data['name'] = $user['name'];
+        // $data['mobile'] = $user['mobile'];
+        // $data['newRoll'] = $user['newRoll'];
+        // $data['email'] = $user['email'];
+        // $data['branch'] = $user['branch'];
+
+        return view('student.printResume')->with('resume',$data);
+        
     }
+	
 }

@@ -12,6 +12,11 @@ use App\Resume;
 
 class placementsController extends Controller
 {
+    
+    public function __construct(){
+        $this->middleware('student');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -19,11 +24,13 @@ class placementsController extends Controller
      */
     public function index()
     {
+        $branch = Auth::user()->branch;
+        // echo $branch;
         $studentData = Auth::user()->resume;
 
-        if(!isset($studentData)){
-            return "Please Fill in your resume first.";
-        }
+        // if(!isset($studentData)){
+        //     return "Please Fill in your resume first.";
+        // }
         
         $allCompanies = DB::table('jaf')
                         ->join('users','jaf.user_id','=','users.id')
@@ -31,7 +38,8 @@ class placementsController extends Controller
                         ->where('studentPanelVisibilityStatus','1')
                         ->get();
 
-        if(($studentData['degree'] == 'B.E.' && $studentData['currentSem'] != 7 && $studentData['currentSem'] != 8)
+        if((!isset($studentData))
+            || ($studentData['degree'] == 'B.E.' && $studentData['currentSem'] != 7 && $studentData['currentSem'] != 8)
             || ($studentData['degree'] == 'M.C.A.' && $studentData['currentSem']!= 5 && $studentData['currentSem'] != 6))
         {
             return view('student.placements')->with(['allCompanies'=>$allCompanies]);
@@ -40,29 +48,47 @@ class placementsController extends Controller
         
         
 
-        $a = $this->appliedIn();
+        $a = $this->appliedIn($studentData['user_id']);
 
         $percent = $studentData['aggregatePercent'];
         if($studentData['aggregatePercent'] < $studentData['averagePercent']){
             $percent = $studentData['averagePercent'];
         }//for allowing the students to register if either of their percentages(aggr/avg) crosses the cutoff.
 
-            $upcoming = DB::table('jaf')
+			if(isset($percent)){
+				$upcoming = DB::table('jaf')
                 ->join('users','jaf.user_id','=','users.id')
                 ->select('users.*','jaf.*')
                 ->where('studentPanelVisibilityStatus','1')
                 ->where('jaf.cutOff','<=',$percent)
+                ->where('jaf.slab','>',$this->bestSlabPlaced($studentData['user_id']))
                 ->whereNotIn('users.id',$a)
-                ->where('openFor','LIKE','%'.$studentData['branch'].'%') 
-                ->get();
+                ->where('openFor','LIKE','%'.$branch.'%') 
+                ->get();	
+			} else {
+				$upcoming = null;	
+			}
 
-            $applied = DB::table('jaf')
+			// if(isset($a)){
+
+                $applied = DB::table('placements')
+                        ->where('student_id',$studentData['user_id'])
+                        ->leftJoin('jaf','placements.company_id','=','jaf.user_id')
+                        ->where('studentPanelVisibilityStatus','1')
+                        ->leftJoin('users','users.id','=','jaf.user_id')
+                        ->get();
+
+/*				$applied = DB::table('jaf')
                 ->join('users','jaf.user_id','=','users.id')
                 ->select('users.*','jaf.*')
                 ->where('studentPanelVisibilityStatus','1')
                 ->whereIn('users.id',$a)
+                ->leftJoin('placements')
                 ->get();
-
+*/
+			// } else {
+			// 	$applied = null;	
+			// }
                         
             return view('student.placements')->with([
                 'upcomings'=>$upcoming,
@@ -76,49 +102,91 @@ class placementsController extends Controller
     public function applyForCompany(Request $request){
         // echo $request->input('applie');
         // $in = Request::all();
-        $data['student_id'] = Auth::user()->id;
-        // $data['company_id'] = $in['applie'];
-        $data['company_id'] = $request->input('applie');
-        $data['level'] = '0';
-        $data['created_at'] = \Carbon\Carbon::now();
-        // var_dump($data);
-        if(DB::table('placements')->insert($data)){
-            return $this->index();
-        } else {
-            echo "Sorry, Could not apply for the company.";
-        }
-    
+
+        $applyButtonYesOrNo = DB::table('jaf')
+            ->where('user_id',$request->input('applie'))
+            ->select('jaf.showApplyButton')
+            ->first();
+
+        if($applyButtonYesOrNo->showApplyButton ==1){
+            $data['student_id'] = Auth::user()->id;
+            // $data['company_id'] = $in['applie'];
+            $data['company_id'] = $request->input('applie');
+            $data['level'] = '0';
+            $data['created_at'] = \Carbon\Carbon::now();
+            // var_dump($data);
+            if(DB::table('placements')->insert($data)){
+    						$error_msg = "Successfully Applied. All The Best!!!";
+    						return redirect()->back()->with('error_msg',$error_msg);
+    				} else {
+                $error_msg = "Sorry, Could not apply for the company.";
+    						return redirect()->back()->with('error_msg',$error_msg);
+            }
+        } 
     }
 
     public function cancelApplicationForCompany(Request $request){
-        // $in = Request::all();
-        $data['student_id'] = Auth::user()->id;
-        $data['company_id'] = $request->input('applie');
-        $data['level'] = '0';
-        $deleted = DB::table('placements')->where('student_id','=',Auth::user()->id)
-                                ->where('company_id','=',$data['company_id'])
-                                ->where('level','0')
-                                ->delete();
-        if($deleted){
-            // echo "deleted";
-            return $this->index();
-        } else {
-            echo "Sorry Not Deleted";
+
+        $applyButtonYesOrNo = DB::table('jaf')
+            ->where('user_id',$request->input('applie'))
+            ->select('jaf.showApplyButton')
+            ->first();
+        if($applyButtonYesOrNo->showApplyButton ==1){
+
+            // $in = Request::all();
+            $data['student_id'] = Auth::user()->id;
+            $data['company_id'] = $request->input('applie');
+            $data['level'] = '0';
+            $deleted = DB::table('placements')->where('student_id','=',Auth::user()->id)
+                                    ->where('company_id','=',$data['company_id'])
+                                    ->where('level',0)
+                                    ->delete();
+            if($deleted){
+                            $error_msg = "Deleted. You can always Apply back!!!";
+                            return redirect()->back()->with('error_msg',$error_msg);
+                    } else {
+                $error_msg = "Sorry, You cannot delete it now.";
+                            return redirect()->back()->with('error_msg',$error_msg);
+            }
         }
     }
 
-    //returns an array containing user_id's of th e companies, student applied for.
-    public function appliedIn(){
+    //returns an array containing user_id's of the companies, student applied for.
+    public function appliedIn($student_id){
         $appliedIn = DB::table('placements')
                     ->select('company_id')
-                    ->where('placements.student_id','=',Auth::user()->id)
+                    ->where('placements.student_id','=',$student_id)
                     ->get();
         $i=0;
         $appliedInCompanyUserIds = array();            
         foreach($appliedIn as $obj){
             $appliedInCompanyUserIds[$i++] = $obj->company_id;
-        }            
+        }
         return $appliedInCompanyUserIds;
+    }
+
+    public function bestSlabPlaced($student_id){
+        // echo Auth::user()->id;
+
+        //returns the list of companies, the student has applied for, along with the levels he has cleared in it!
+        //if the level in placement table is 99, then that student is placed in that company.
+        $x = DB::table('placements')
+            ->where('student_id',$student_id)
+            ->leftJoin('jaf','placements.company_id','=','jaf.user_id')
+            ->leftJoin('users','users.id','=','placements.company_id')
+            ->where('placements.level',99)
+            ->select('placements.*','jaf.*','users.*')
+            ->get();
+        
+        // $i=0;
+        // $placed = array();            
+        $bestSlabPlaced = 0;
+        foreach($x as $obj){
+            // $placed[$i++] = $obj->company_id;
+            if($obj->level==99 && $obj->slab > $bestSlabPlaced)
+                $bestSlabPlaced = $obj->slab;
+        }            
+        return $bestSlabPlaced;
     }
 
     /**

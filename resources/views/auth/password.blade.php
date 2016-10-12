@@ -1,4 +1,4 @@
-@extends('app')
+@extends('preloginmaster')
 
 @section('content')
 <div class="container-fluid">
@@ -24,7 +24,7 @@
 						</div>
 					@endif
 
-					<form class="form-horizontal" role="form" method="POST" action="{{ url('/password/email') }}">
+					<form class="form-horizontal" role="form" method="POST" action="{{ url('/password-change') }}">
 						{!! csrf_field() !!}
 
 						<div class="form-group">

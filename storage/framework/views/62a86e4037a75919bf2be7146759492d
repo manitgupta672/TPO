@@ -1,172 +1,104 @@
 <?php $__env->startSection('content'); ?>
+<!-- Main Content -->
+            
+            <!-- BreadCrumbs -->
+            <nav class="col s12 m9 l10 teal lighten-1 z-depth-2">
+              <div class="nav-wrapper ">
+                <div class="col">
+                  <a href="#!" class="breadcrumb">Home</a>
+                  <a href="#!" class="breadcrumb">Companies</a>
+                </div>
+              </div>
+            </nav>
+            <!-- BreadCrumbs End -->
+          
+          <div class="col s8"><br></div> <!-- Line Break -->
+          
+          <div class="col s12 m9 l10"> <!-- First Row Starts -->
+            
+           <div class="row">
+            <div class="col s12">
+              <ul class="tabs">
+                <li class="tab col s12 m3 l3"><a href="#allcomp" onclick="Materialize.fadeInImage('.staggered-test')">All Companies</a></li>
+                <li class="tab col s12 m3 l3"><a href="#upcomingcomp" onclick="Materialize.fadeInImage('.staggered-test')">Upcoming Companies For You</a></li>
+                <li class="tab col s12 m3 l3"><a href="#appliedfor" onclick="Materialize.fadeInImage('.staggered-test')">Applied For</a></li>
+              </ul>
+            </div>
+            
+            <div id="allcomp" class="col s12">
+              <!-- All Companies -->
+              <!-- Row One -->
 
-<?php
-	function ifApplied($id,$appliedInCompanyUserIds){
-		if(in_array($id,$appliedInCompanyUserIds))
-			echo "Applied";
-		else
-			echo "Apply";
-	}
-?>
-
-<div>
-	<div id="nav" style="float:left; width:30%;">
-		<form>
-			<ul>
-				<li style="list-style:none;"><input type="radio" value="upcoming" name="selectOne" /> Upcoming Companies for You</li>
-				<li style="list-style:none;"><input type="radio" value="applied" name="selectOne" /> Companies You have applied for</li>
-				<li style="list-style:none;"><input type="radio" value="allCompanies" name="selectOne" /> All Companies</li>
-			</ul>
-		</form>		
-	</div>
-
-	<div style="float:right; width:70%;  border-left: 2px dashed #0000FF; padding-left:10%; padding-top:2%" id="contennt">
-		<div id="up" style="display:none;">
-			<?php if(isset($upcomings)){ ?>
-				<?php echo Form::open(array('url'=>'/student/panel/placements/applyForCompany','method'=>'POST', 'id'=>'myform')); ?>
-
-					<h1>Upcoming Companies For You</h1>
-
-					<?php foreach($upcomings as $upcoming): ?>
-					
-						<p>Company Name : <?php echo e($upcoming->name); ?></p>
-						<p>Company URL : <?php echo e($upcoming->compUrl); ?></p>
-						<p>Company Email : <?php echo e($upcoming->email); ?></p>
-						<p>Selection Procedure : <?php echo e($upcoming->selPro); ?></p>
-						<input type="hidden" name="applie" value="<?php echo $upcoming->user_id ; ?>">
-						<input type="submit" value="Apply">
-	<!--					<button type="submit" value="<?php echo $upcoming->user_id ; ?>" id="<?php echo $upcoming->user_id ; ?>" class="apply">Apply</button>
-	-->					<hr/>
-					<?php endforeach; ?>
-				<?php echo Form::close(); ?>
-
-			<?php } else {?>
-				<h3>You are not eligible to apply for this Placement Season due to any of the following reasons</h3>
-				<p>You are not in your final year.</p>	
-			<?php } ?>	
-		</div>
-		<div id="ap" style="display:none;">
-			<?php if(isset($upcomings)){ ?>
-				<?php echo Form::open(array('url'=>'/student/panel/placements/cancelApplicationForCompany','method'=>'POST', 'id'=>'myform2')); ?>
-
-					<h1>Applied Companies</h1>
-
-					<?php foreach($applieds as $applied): ?>
-					
-						<p>Company Name : <?php echo e($applied->name); ?></p>
-						<p>Company URL : <?php echo e($applied->compUrl); ?></p>
-						<p>Company Email : <?php echo e($applied->email); ?></p>
-						<p>Selection Procedure : <?php echo e($applied->selPro); ?></p>
-						<input type="hidden" name="applie" value="<?php echo $applied->user_id ; ?>">
-						<input type="submit" value="Delete">
-	<!--					<button type="submit" value="<?php echo $applied->user_id ; ?>" id="<?php echo $applied->user_id ; ?>" class="delete">Delete</button>
-		-->				<hr/>
-					<?php endforeach; ?>
-				<?php echo Form::close(); ?>
-
-			<?php } else {?>
-				<h3>You have not applied for any company in this placement season.</h3>
-			<?php } ?>
-		</div>
-		<div id="all" style="display:none;">
-			<h1>All Companies</h1>
-
-			<?php foreach($allCompanies as $company): ?>
-				<p>Company Name : <?php echo e($company->name); ?></p>
-				<p>Company URL : <?php echo e($company->compUrl); ?></p>
-				<p>Company Email : <?php echo e($company->email); ?></p>
-				<p>Selection Procedure : <?php echo e($company->selPro); ?></p>
-				<hr/>
-			<?php endforeach; ?>	
-		</div>
-	</div>
-</div>
-
-
-
-
-
-<script type="text/javascript">
-		// $(document).ready(function(){
-			
-
-
-		// 	$(".apply").click(function(){
-		// 		var clicked = this.id;
-		// 		// alert($(this).attr("value"));
-		// 		// if($(this).attr("value").slice(-1)=='A'){
-		// 			$.ajax({
-		// 				url:'/student/panel/placements/applyForCompany',
-		// 				type:'post',
-		// 				data:{
-		// 					'applie': $(this).val(),
-		// 					'_token': $('input[name=_token]').val()
-		// 				},
-		// 				success: function(data){
-		// 					// alert("done");
-		// 					$("#" + clicked).prop('disabled', true);
-		//         			// $("#" + clicked).val("clicked");
-		//         			$("#" + clicked).html('Applied');
-		//         			// alert(data);
-		//       			}
-		// 			});
-		// 		// }
-		// 	return false;
-		// 	});
+               <div class="row">
+                  <?php foreach($allCompanies as $company): ?>
+                  <div class="col s12 m6 staggered-test">
+                    <div class="cardblue darken-3">
+                      <div class="card-content white-text">
+                        <span class="card-title"><?php echo e($company->name); ?></span>
+                        <p><?php echo e($company->selPro); ?></p>
+                      </div>
+                      <div class="card-action">
+                        <a href="javascript:void(0);"><?php echo e($company->compUrl); ?></a>
+                        <a href="javascript:void(0);"> <?php echo e($company->email); ?> </a>
+                      </div>
+                    </div>
+                  </div>
+                  <?php endforeach; ?>
+                </div>
+                <!-- Row One Ends --> <!-- All Companies End -->
+            </div>
+            <div id="upcomingcomp" class="col s12">
+               <!-- Upcoming Companies -->
+              <!-- Row One -->
+               <div class="row">
+               <?php foreach($upcomings as $upcoming): ?>
+                  <div class="col s12 m6 staggered-test">
+                    <div class="cardblue darken-3">
+                      <div class="card-content white-text">
+                        <span class="card-title"><?php echo e($upcoming->name); ?></span>
+                        <p><?php echo e($upcoming->selPro); ?></p>
+                      </div>
+                      <div class="card-action">
+                        <a href="javascript:void(0);"><?php echo e($upcoming->compUrl); ?></a>
+                        <a href="javascript:void(0);"><?php echo e($upcoming->email); ?></a>
+                      </div>
+                    </div>
+                  </div>
+                <?php endforeach; ?>
+                </div>
+                <!-- Row One Ends --> <!-- Upcoming Companies End -->
+            </div>
+            <div id="appliedfor" class="col s12">
+               <!-- Applies For -->
+              <!-- Row One -->
+               <div class="row">
+               <?php foreach($applieds as $applied): ?>
+                  <div class="col s12 m6 staggered-test">
+                    <div class="cardblue darken-3">
+                      <div class="card-content white-text">
+                        <span class="card-title"><?php echo e($applied->name); ?></span>
+                        <p> <?php echo e($applied->selPro); ?> </p>
+                      </div>
+                      <div class="card-action">
+                        <a href="javascript:void(0);"> <?php echo e($company->compUrl); ?> </a>
+                        <a href="javascript:void(0);"><?php echo e($company->email); ?> </a>
+                      </div>
+                    </div>
+                  </div>
+                <?php endforeach; ?>
+                </div>
+                <!-- Row One Ends --> <!-- Applied For Ends -->
+            </div>
+          </div>
+        
+          </div> <!-- First Row ends -->
 
 
-		// 	$(".delete").click(function(){
-		// 		var clicked = this.id;
-		// 		var urrl = '/student/panel/placements/cancelApplicationForCompany'; 
-		// 		// alert($(this).attr("value"));
-		// 		// if($(this).attr("value").slice(-1)=='A'){
-		// 			$.ajax({
-		// 				url:urrl,
-		// 				type:'post',
-		// 				data:{
-		// 					'applie': $(this).val(),
-		// 					'_token': $('input[name=_token]').val()
-		// 				},
-		// 				success: function(data){
-		// 					$("#" + clicked).prop('disabled', true);
-		//         			// $("#" + clicked).val("clicked");
-		//         			$("#" + clicked).html('Deleted');
-		//         			// alert(data);
-		//       			}
-		// 			});
-		// 		// }
-		// 	return false;
-		// 	});
+        </div>  <!-- Main Content Row Ends -->
 
+        <script type="text/javascript"></script>
+        <script src="js/counter.js"></script>
+        <script src="js/jquery.knob.modified.js"></script>
+        <script type="text/javascript" src="js/customjs.js"></script>
 
-		// });
-
-</script>
-
-<script type="text/javascript">
-	$(document).ready(function(){
-		$('#nav form input[value=upcoming]').click(function(){
-			// html("manit");
-			// alert("hello");
-			$('#ap').hide(500);
-			$('#all').hide(500);
-			$('#up').show(500);
-		});
-		$('#nav form input[value=applied]').click(function(){
-			// html("manit");
-			// alert("hello");
-			$('#all').hide(500);
-			$('#up').hide(500);
-			$('#ap').show(500);
-		});
-		$('#nav form input[value=allCompanies]').click(function(){
-			// html("manit");
-			// alert("hello");
-			$('#ap').hide(500);
-			$('#up').hide(500);
-			$('#all').show(500);
-		})
-	});
-</script>
-<?php $__env->stopSection(); ?>
 <?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

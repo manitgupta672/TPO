@@ -14,7 +14,7 @@ class Jaf extends Migration
     {
         Schema::create('jaf', function (Blueprint $table) {
             $table->increments('id');
-
+            $table->integer('slab');
             // Post Login Profile  Update
             $table->string('compUrl');
             $table->string('compAdd');
@@ -27,10 +27,12 @@ class Jaf extends Migration
             // About Job 
             $table->text('compOver');
             $table->text('jobDesc'); // include payscale per post Designations .. gross salary
+            $table->integer('minPackage');
+            $table->integer('maxPackage');
             $table->string('cityPost');
-            $table->string('accom');
-            $table->string('bond'); // default 0
-            $table->string('cutOff');
+            $table->boolean('accom');
+            $table->boolean('bond'); // default 0
+            $table->integer('cutOff');
 
             // Selection Procedure
             $table->text('selPro');
@@ -41,7 +43,9 @@ class Jaf extends Migration
             // view is same as previous jaf checkbox
             // MEC/4-ECC/5-ITE/5
             $table->integer('user_id')->unsigned()->unique();
-            $table->string('studentPanelVisibilityStatus');
+            $table->boolean('studentPanelVisibilityStatus');
+						$table->boolean('showApplyButton');
+            $table->text('actualRounds');
             // jafKey points to user
              $table->foreign('user_id')
                       ->references('id')

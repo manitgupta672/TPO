@@ -22,6 +22,10 @@ class Jaf extends Model
  	'ktAllowed',
  	'selPro',
  	'openFor',
+ 	'minPackage',
+ 	'maxPackage',
+ 	'slab',
+ 	'actualRounds',
  	'user_id'];
 
     public function user(){

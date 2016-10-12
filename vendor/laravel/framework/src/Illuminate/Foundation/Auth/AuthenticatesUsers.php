@@ -47,8 +47,21 @@ trait AuthenticatesUsers
 
         $credentials = $this->getCredentials($request);
 
+        // if (Auth::attempt($credentials, $request->has('remember'))) {
+        //         return $this->handleUserWasAuthenticated($request, $throttles);
+        // }
+
+
+        //change no 1
         if (Auth::attempt($credentials, $request->has('remember'))) {
-            return $this->handleUserWasAuthenticated($request, $throttles);
+            if(Auth::user()->confirmed == '1')
+                return $this->handleUserWasAuthenticated($request, $throttles);
+            else{
+                Auth::logout();
+                $emailNotConfirmedMessage = "Sorry your email address is not confirmed yet.";
+                return view('auth.login')->with('error_msg',$emailNotConfirmedMessage);
+            }
+                // return redirect('/auth/logout');//toast for email not confirmed yet
         }
 
         // If the login attempt was unsuccessful we will increment the number of attempts

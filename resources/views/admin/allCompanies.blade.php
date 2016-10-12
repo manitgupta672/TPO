@@ -1,16 +1,20 @@
-@extends('app')
+
+@extends('postloginmaster')
 @section('content')
-<h1>Hi</h1>
+<h2>Companies that have registered and filled their Jaf's : </h2>
 <div>
 	{!! Form::open(array('url'=>'/admin/setVisibility','method'=>'POST', 'id'=>'myform')) !!}
-		@foreach($companies as $company)
+		@if(!empty($companies))
+			@foreach($companies as $company)
 			<!-- <a href="admin/companyManagement/{{$company->id}}">{{$company->name}}</a> -->
-			<a href="{{ action('adminController@company',[$company->user_id]) }}">{{$company->name}}</a>
+			<h3><a href="{{ action('adminController@company',[$company->user_id]) }}">{{$company->name}}</a></h3>
 			<?php echo "<br/>";?>
 			<hr/>
-		@endforeach
+			@endforeach
+		@else
+			No Companies Registered Yet!
+		@endif
 		
-			<!-- <button type="submit" value="<?php echo $company->user_id ; ?>" id="<?php echo $company->user_id ; ?>">Apply</button> -->
 	{!! Form::close() !!}		
 </div>
 

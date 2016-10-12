@@ -59,7 +59,8 @@ class Resume extends Model
      'extraCurricular',
      'user_id',
      'averagePercent',
-     'aggregatePercent'
+     'aggregatePercent',
+     'objective'
 
      ];
 

@@ -1,61 +1,70 @@
-@extends('app')
-
+@extends('preloginmaster')
 @section('content')
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
-			<div class="panel panel-default">
-				<div class="panel-heading">Login</div>
-				<div class="panel-body">
-					@if (count($errors) > 0)
-						<div class="alert alert-danger">
-							<strong>Whoops!</strong> There were some problems with your input.<br><br>
-							<ul>
-								@foreach ($errors->all() as $error)
-									<li>{{ $error }}</li>
-								@endforeach
-							</ul>
-						</div>
-					@endif
+@if(session()->has('error_msg'))
+  <script>
+    $(document).ready(function(){
+        Materialize.toast('{{ session('error_msg') }}', 10000,'rounded');
+    });
+  </script>
+@endif
+@if(!empty($error_msg))
+  <script>
+    $(document).ready(function(){
+        Materialize.toast('{{$error_msg}}', 10000,'rounded');
+    });
+  </script>
+@endif
 
-					<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
-						{!! csrf_field() !!}
+@if(count($errors) > 0)
+	@foreach($errors->all() as $error)
+		<script>
+    $(document).ready(function(){
+        Materialize.toast('{{$error}}', 10000,'rounded');
+    });
+  </script>
+	@endforeach
+@endif
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
-							<div class="col-md-6">
-								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
-							</div>
-						</div>
+<div class="row login-form" style="  margin-top: 100px !important; margin-bottom:50px;">
+        <div class="col s12 m6 l6 push-l3 push-m3">
+          <div class="card blue-grey darken-1 s12">
+            <div class="card-content white-text center-align">
+              <div class="row"><i class="fa fa-3x fa-sign-in"></i></div>
+              <span class="card-title">SIGN IN</span>
+              <hr>
+              <p>
+                <div class="row">
+                <form class="col s12" role="form" method="POST" action="{{ url('/auth/login') }}">
+            {!! csrf_field() !!}
+                <div class="row">
+                    
+                    <div class="input-field col s12 m6 l6">
+                      <i class="material-icons prefix icon-24px">email</i>
+                      <input id="email" name="email" type="text" value="{{ old('email') }}" class="validate">
+                      <label for="email">E-Mail</label>
+                    </div>
+                    
+                    <div class="input-field col s12 m6 l6">
+                      <i class="material-icons prefix icon-24px">lock</i>
+                      <input id="password" name="password" type="password" class="validate">
+                      <label for="password">Password</label>
+                    </div>
+                    <div class="input-field col s12 m12 l12">
+                       <button class="btn waves-effect waves-light col s12 center-align" type="submit">Login
+                        <i class="material-icons right">send</i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">Password</label>
-							<div class="col-md-6">
-								<input type="password" class="form-control" name="password">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" name="remember"> Remember Me
-									</label>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<button type="submit" class="btn btn-primary">Login</button>
-
-								<a class="btn btn-link" href="{{ url('/password/email') }}">Forgot Your Password?</a>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+              </p>
+            </div>
+            <div class="card-action row">
+              <a href="/password-reset" class="col l5 s12 push-l1 center-align">Forget Password !</a>
+              <a href="/auth/register" class="col l5 s12 push-l1 center-align">Yet to Register ?</a>
+            </div>
+          </div>
+        </div>
+  </div>
 @endsection

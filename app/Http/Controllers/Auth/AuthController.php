@@ -49,6 +49,7 @@ class AuthController extends Controller
                 'name' => 'required|max:255',
                 'email' => 'required|email|max:255|unique:users',
                 'mobile' => 'required|min:10',
+                'branch'=>'required',
                 'password' => 'required|confirmed|min:6',
                 'newRoll' => 'required|min:10|max:10|unique:users' 
             ]);
@@ -56,12 +57,32 @@ class AuthController extends Controller
             return Validator::make($data, [
                 'name' => 'required|max:255',
                 'mobile' => 'required|min:10',
+                // 'newRoll' => 'required|min:10',
                 'email' => 'required|email|max:255|unique:users',
                 'password' => 'required|confirmed|min:6',
             ]);
         } elseif($data['entity']=='admin'){
             return Validator::make($data, [
                 'name' => 'required|max:255',
+                'email' => 'required|email|max:255|unique:users',
+                'password' => 'required|confirmed|min:6',
+            ]);
+        } elseif($data['entity']=='alumni'){
+            return Validator::make($data, [
+                'name' => 'required|max:255',
+                'mobile' => 'required|min:10',
+                // 'newRoll' => 'required|min:10',
+                'branch'=>'required',
+								'passOut'=> 'required',
+                'email' => 'required|email|max:255|unique:users',
+                'password' => 'required|confirmed|min:6',
+            ]);
+        } elseif($data['entity']=='professor'){
+            return Validator::make($data, [
+                'name' => 'required|max:255',
+                'mobile' => 'required|min:10',
+                'branch'=>'required',
+                // 'newRoll' => 'required|min:10',
                 'email' => 'required|email|max:255|unique:users',
                 'password' => 'required|confirmed|min:6',
             ]);
@@ -78,26 +99,56 @@ class AuthController extends Controller
     {
         if($data['entity']=='student'){
             return User::create([
-                'entity' => $data['entity'],
+                'entity' => '1',
                 'name' => $data['name'],
                 'email' => $data['email'],
                 'mobile' => $data['mobile'],
+                'confirmationCode'=>str_random(30),
                 'newRoll' => $data['newRoll'],
+                'branch' => $data['branch'],
                 'password' => bcrypt($data['password'])
             ]);
         } elseif($data['entity']=='company') {
             return User::create([
-                'entity' => $data['entity'],
+                'entity' => '2',
                 'name' => $data['name'],
+                'confirmationCode'=>str_random(30),
                 'email' => $data['email'],
+                'branch' => '',
+                'newRoll' => $data['mobile'],
                 'mobile' => $data['mobile'],
                 'password' => bcrypt($data['password'])
             ]);
         } elseif($data['entity']=='admin') {
             return User::create([
-                'entity' => $data['entity'],
+                'entity' => '5',
                 'name' => $data['name'],
+                'confirmationCode'=>str_random(30),
+                'branch'=>'admin-branch',
                 'email' => $data['email'],
+                'newRoll'=>$data['name'],
+                'password' => bcrypt($data['password'])
+            ]);
+        } elseif($data['entity']=='alumni') {
+            return User::create([
+                'entity' => '3',
+                'name' => $data['name'],
+                'branch' => $data['branch'].'-'.$data['passOut'],
+                'email' => $data['email'],
+                'confirmationCode'=>str_random(30),
+                'newRoll' => $data['mobile'],
+                'mobile' => $data['mobile'],
+                'password' => bcrypt($data['password'])
+            ]);
+        } elseif($data['entity']=='professor') {
+            return User::create([
+                'entity' => '4',
+                'name' => $data['name'],
+                'branch' => $data['branch'],
+                'email' => $data['email'],
+                'confirmationCode'=>str_random(30),
+                'newRoll' => $data['mobile'],
+                'mobile' => $data['mobile'],
                 'password' => bcrypt($data['password'])
             ]);
         }

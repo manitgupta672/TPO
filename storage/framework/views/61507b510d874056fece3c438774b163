@@ -71,7 +71,17 @@
            <li><a href="auth/login">Sign In</a></li>
            <li><a href="auth/register">Register</a></li>
            <?php else: ?>
-           <li><a href="<?php echo e(url('/' . auth()->user()->entity . '/panel')); ?>">My Account</a></li>
+              <?php if(auth()->user()->entity==1): ?>
+              <li><a href="<?php echo e(url('/student/panel')); ?>">My Account</a></li>
+              <?php elseif(auth()->user()->entity==2): ?>
+                <li><a href="<?php echo e(url('/company/panel')); ?>">My Account</a></li>
+              <?php elseif(auth()->user()->entity==3): ?>
+                <li><a href="<?php echo e(url('/alumni/panel')); ?>">My Account</a></li>
+              <?php elseif(auth()->user()->entity==4): ?>
+                <li><a href="<?php echo e(url('/professor/panel')); ?>">My Account</a></li>
+              <?php elseif(auth()->user()->entity==5): ?>
+                <li><a href="<?php echo e(url('/admin/panel')); ?>">My Account</a></li>
+              <?php endif; ?>
            <?php endif; ?>
            <!-- <li><a href='javascript:void(0);' class="open-popup" data-id="popup_3" data-animation="scaleUp" >Sign In</a></li> -->
         </ul>
@@ -246,8 +256,8 @@
     <p style="text-align:center; font-size:14px;"> <span class="fa fa-copyright"></span> 2015 MBM Site All Rights Reserved </p>
 </div>
 <!-- Google Map Scripts -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXQnHj2Vs4BhZfp2wHkV4Voa9jMKBIMnY&callback=initMap"
-        async defer></script>
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXQnHj2Vs4BhZfp2wHkV4Voa9jMKBIMnY&callback=initMap"
+        async defer></script>-->
 <script>
  var contentString = "<p><strong>Mungniram Bangur Memorial College is one of the oldest and reputed college in India.</strong></p>"+
  "<p><span class=\"fa fa-phone\"></span> Call : 0291 - 2551566 &nbsp; <span class=\"fa fa-external-link\"></span> Web : www.mbm.ac.in</p>";

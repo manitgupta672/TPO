@@ -1,12 +1,441 @@
 <?php $__env->startSection('content'); ?>
-	
-	<h3>This is Student admin panel</h3>
-	<a href="/student/panel/resume" class="btn">Edit / Fill Resume</a>
-	<a href="/student/panel/placements" class="btn">Your Companies</a>
-	<a href="/student/panel/fellowStudents" class="btn">Your Fellow Mates</a>
-	<a href="/student/panel/printResume" class="btn">My Resume</a>
-	<a href="/student/panel/news" class="btn">Placement Notifications</a>
-	<a href="/auth/logout" class="btn">Logout</a>
+          
+          <!-- Main Content -->
+            
+            <!-- BreadCrumbs -->
+            <nav class="col s12 m9 l10 teal lighten-1 z-depth-2">
+              <div class="nav-wrapper ">
+                <div class="col">
+                  <a href="#!" class="breadcrumb">Home</a>
+                  <a href="#!" class="breadcrumb">Dashboard</a>
+                </div>
+              </div>
+            </nav>
+            <!-- BreadCrumbs End -->
+          
+          <div class="col s8"><br></div>
+         <!-- First Row Starts -->
+        
+         <!-- Semester Wise Result -->
+         <div class="col s12 m9 l10">
+         <div class="widget col s12 m9 l8 textwhite ">
+             <div class="card brown lighten-1 hoverable">
+            <div class="card-content white-text">
+              <span class="card-title">Semester Wise Result</span>
+              <hr>
+          
+              <div class="content">
+                
+                <div class="verticalChart">
+                  
+                  <div class="singleBar">
+                  
+                    <div class="bar">
+                    
+                      <div class="value">
+                          <span><?php if(isset($data)): ?>
+                          <?php echo e($data->sem1Percent); ?>%
+                          <?php else: ?>
+                          -
+                          <?php endif; ?></span>
+                      </div>
+                    
+                    </div>
+                    
+                    <div class="title">I</div>
+                  
+                  </div>
+                  
+                  <div class="singleBar">
+                  
+                    <div class="bar">
+                    
+                      <div class="value">
+                          <span><?php if(isset($data)): ?>
+                          <?php echo e($data->sem2Percent); ?>%
+                          <?php else: ?>
+                          -
+                          <?php endif; ?></span>
+                      </div>
+                    
+                    </div>
+                    
+                    <div class="title">II</div>
+                  
+                  </div>
+                  
+                  <div class="singleBar">
+                  
+                    <div class="bar">
+                    
+                      <div class="value">
+                          <span><?php if(isset($data)): ?>
+                          <?php echo e($data->sem3Percent); ?>%
+                          <?php else: ?>
+                          -
+                          <?php endif; ?></span>
+                      </div>
+                    
+                    </div>
+                    
+                    <div class="title">III</div>
+                  
+                  </div>
+                  
+                  <div class="singleBar">
+                  
+                    <div class="bar">
+                    
+                      <div class="value">
+                          <span><?php if(isset($data)): ?>
+                          <?php echo e($data->sem4Percent); ?>%
+                          <?php else: ?>
+                          -
+                          <?php endif; ?></span>
+                      </div>
+                    
+                    </div>
+                    
+                    <div class="title">IV</div>
+                  
+                  </div>
+                  
+                  <div class="singleBar">
+                  
+                    <div class="bar">
+                    
+                      <div class="value">
+                        <span><?php if(isset($data)): ?>
+                          <?php echo e($data->sem5Percent); ?>%
+                          <?php else: ?>
+                          -
+                          <?php endif; ?></span>
+                      </div>
+                    
+                    </div>
+                    
+                    <div class="title">V</div>
+                  
+                  </div>
+                  
+                  <div class="singleBar">
+                  
+                    <div class="bar">
+                    
+                        <div class="value">
+                        <span><?php if(isset($data)): ?>
+                          <?php echo e($data->sem6Percent); ?>%
+                          <?php else: ?>
+                          -
+                          <?php endif; ?></span>
+                      </div>
+                    
+                    </div>
+                    
+                    <div class="title">VI</div>
+                  
+                  </div>
+                  
+                  <div class="singleBar">
+                  
+                    <div class="bar">
+                    
+                        <div class="value">
+                        <span><?php if(isset($data)): ?>
+                          <?php echo e($data->sem7Percent); ?>%
+                          <?php else: ?>
+                          -
+                          <?php endif; ?></span>
+                      </div>
+                    
+                    </div>
+                    
+                    <div class="title">VII</div>
+                  
+                  </div>
+                  
+                  <div class="singleBar">
+                  
+                    <div class="bar">
+                    
+                      <div class="value">
+                        <span><?php if(isset($data)): ?>
+                          <?php echo e($data->sem8Percent); ?>%
+                          <?php else: ?>
+                          -
+                          <?php endif; ?></span>
+                      </div>
+                    
+                    </div>
+                    
+                    <div class="title">VIII</div>
+                  
+                  </div>
+                  
+                  <div class="clearfix"></div>
+                  
+                </div>
+              
+              </div>
+              
+            </div><!--/span-->
+           </div>
+          </div>
 
-<?php $__env->stopSection(); ?>
+        <!-- Semester Wise Result ends -->
+
+        <!-- Upcoming Companies start -->
+
+        <div class="col s12 m9 l4 textwhite ">
+          <div class="cardblue-grey darken-1 hoverable">
+            <div class="card-content white-text">
+              <span class="card-title">Upcoming Companies</span>
+              <hr>
+              <?php if(count($upcomings)>0 && count($applieds)>0){ ?>
+              <table class="bordered centered textwhite companytable">
+                <thead>
+                  <tr>
+                      <th data-field="id"></th>
+                      <th data-field="name">Company Name</th>
+                      <th data-field="price">Apply</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+        <?php echo Form::open(array('url'=>'/student/panel/applyForCompanyDashboard','method'=>'POST', 'id'=>'myform')); ?>
+
+                <?php foreach($upcomings as $upcoming): ?>
+                  <tr>
+                    <td><i class="tiny material-icons">grade</i></td>
+                    <td><?php echo e($upcoming->name); ?></td>
+                    <input type="hidden" name="applie" value="<?php echo $upcoming->user_id ; ?>">
+
+                    <td>
+                    <input type="submit" value="Apply" style="color:black;">
+                    </td>
+<!--                     <td><a class="btn-floating waves-effect waves-ligh" href=""><i class="material-icons right">send</i></a></td>
+ -->                  </tr>
+                <?php endforeach; ?>
+        <?php echo Form::close(); ?>
+
+              <?php echo Form::open(array('url'=>'/student/panel/cancelApplicationForCompany','method'=>'POST', 'id'=>'myform')); ?>
+
+                <?php foreach($applieds as $applied): ?>
+                  <tr>
+                    <td><i class="tiny material-icons">grade</i></td>
+                    <td><?php echo e($applied->name); ?></td>
+                    <input type="hidden" name="applie" value="<?php echo $applied->user_id ; ?>">
+
+                    <td>
+                    <input type="submit" value="Delete" style="color:black;">
+                    </td>
+<!--                     <td><a class="btn-floating waves-effect waves-ligh" href=""><i class="material-icons right">send</i></a></td>
+ -->                  </tr>
+                <?php endforeach; ?>
+        <?php echo Form::close(); ?>
+
+                </tbody>
+              </table>
+        <!-- <?php echo Form::close(); ?> -->
+        <?php } else {?>
+          <p>You are not eligible to apply for this Placement Season due to any of the following reasons</p>
+          <a href="#">View All Companies</a>
+        <?php } ?>  
+
+            </div>
+          </div>
+        </div>
+        </div>
+        <!--  First Row Ends -->
+
+        <div class="col s8"><br></div>
+
+        <!-- Second Row Starts -->
+        
+        <div class="col s12 m9 l10">
+
+        <div class=" col s12 m9 l6 textwhite ">
+          <div class="carddeep-orange  hoverable">
+            <div class="card-content white-text bottom-padding-zero">
+              <span class="card-title">Resume Complete</span>
+              <hr>
+
+
+                  <a href="/student/panel/resume">
+                  <div class="circleStatsItemBox center-align">
+                    <div class="circleStat">
+                      <input type="text" value="89" class="whiteCircle" />
+                      <span class="percent">Percent</span>
+                    </div>    
+                    <div class="footer">
+                      <span class="count">
+                        <span class="number">22</span>
+                        <span class="unit">Details</span>
+                      </span>
+                      <span class="sep"> / </span>
+                      <span class="value">
+                        <span class="number">48</span>
+                        <span class="unit">Details</span>
+                      </span> 
+                    </div>
+
+                  </div>
+                  </a>
+
+            </div>
+          </div>
+        </div>
+
+             <div class=" col s12 m9 l6 textwhite ">
+          <div class="cardlight-green darken-1 hoverable">
+            <div class="card-content white-text bottom-padding-zero">
+              <span class="card-title">Placements</span>
+              <hr>
+
+
+                  <a href="/student/panel/placements">
+                  <div class="circleStatsItemBox center-align">
+                    <div class="circleStat">
+                      <input type="text" value="40" class="whiteCircle" />
+                      <span class="percent">Percent</span>
+                    </div>    
+                    <div class="footer">
+                      <span class="count">
+                        <span class="number">252</span>
+                        <span class="unit">Students</span>
+                      </span>
+                      <span class="sep"> / </span>
+                      <span class="value">
+                        <span class="number">630</span>
+                        <span class="unit">Students</span>
+                      </span> 
+                    </div>
+
+                  </div>
+                  </a>
+
+            </div>
+          </div>
+        </div>
+
+        
+
+        </div>
+        <!--  Second Row Ends -->
+
+        <!-- <div class="col s8"><br></div> -->
+
+        <!-- Third Row Starts  -->
+        <div class="col s12 m9 l10">
+        <a href="/student/panel/news">
+          <div class=" col s12 m9 l4 textwhite ">
+            <div class="cardyellow darken-3 hoverable">
+              <div class="card-content white-text">
+                <span class="card-title">News</span>
+                <hr>
+                <p class="center-align">
+                  <i class="large material-icons">notifications</i>
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="/student/panel/placements">
+          <div class=" col s12 m9 l4 textwhite ">
+             <div class="cardteal darken-2 darken-1 hoverable">
+              <div class="card-content white-text">
+                <span class="card-title">Placements</span>
+                <hr>
+                <p class="center-align">
+                  <i class="large material-icons">grade</i>
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="/student/panel/fellowStudents">
+          <div class=" col s12 m9 l4 textwhite ">
+            <div class="cardpink darken-2 hoverable">
+              <div class="card-content white-text">
+                <span class="card-title">Fellow-Mates</span>
+                <hr>
+               <p class="center-align">
+                  <i class="large material-icons">wc</i>
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+        </div>
+        <!-- Row Three Ends -->
+
+        <!-- Row Four starts -->
+       <div class="col s12 m9 l10">
+
+       <a href="">
+       <div class=" col s12 m9 l4 textwhite ">
+           <div class="cardlight-blue darken-2 hoverable">
+            <div class="card-content white-text">
+              <span class="card-title">Calendar</span>
+              <hr>
+              <p class="center-align">
+                <i class="large material-icons">subject</i>
+              </p>
+            </div>
+          </div>
+        </div>
+        </a>
+
+        <a href="">
+        <div class=" col s12 m9 l4 textwhite ">
+          <div class="cardblue-grey darken-4 hoverable">
+            <div class="card-content white-text">
+              <span class="card-title">Settings</span>
+              <hr>
+              <p class="center-align">
+                <i class="large material-icons">settings</i>
+              </p>
+            </div>
+          </div>
+        </div>
+        </a>
+
+        </div>
+        <!-- Row Four Ends -->
+
+
+        <!-- Lines background -->
+        <canvas id="lines-canvas" style="position: fixed;
+                      top: 0;
+                      left: 0;
+                      z-index: -20;"></canvas>
+        <script src="js/lines.min.js"></script>
+        <script>
+            // set canvas width and height based on the window
+            var canvas = $('#lines-canvas');
+            canvas.attr('height',$(window).height());
+            canvas.attr('width',$(window).width());
+
+            new lines().draw();
+        </script>
+        <!-- Lines End -->
+
+        </div>  <!-- Row Ends -->
+
+
+        
+
+        <script src="js/counter.js"></script>
+        <script src="js/jquery.knob.modified.js"></script>
+        <script type="text/javascript" src="js/customjs.js"></script>
+
+
+      
+
+  <?php $__env->stopSection(); ?>
+
+  
+
 <?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
